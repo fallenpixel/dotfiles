@@ -1,0 +1,92 @@
+
+##PERSONAL
+#Kingslanding
+Host kingslanding
+HostName kingslanding
+ForwardX11 yes
+ForwardX11Trusted yes
+ForwardAgent yes
+User katyl
+IdentityFile  ~/.ssh/personal_rsa
+
+#Pyke
+Host pyke
+HostName pyke
+ForwardX11 yes
+ForwardX11Trusted yes
+ForwardAgent yes
+User katyl
+IdentityFile  ~/.ssh/personal_rsa
+
+##INFRASTRUCTURE
+#westeros
+Host westeros
+HostName westeros
+User katyl
+IdentityFile  ~/.ssh/inf_rsa
+
+#essos
+Host essos
+HostName essos
+User katyl
+IdentityFile  ~/.ssh/inf_rsa
+
+#Casterlyrock
+Host casterlyrock
+HostName casterlyrock
+User katyl
+IdentityFile  ~/.ssh/inf_rsa
+
+##DIGITALOCEAN SERVERS
+#Droplet
+Host webhost
+HostName katyl.info
+User katyl
+ForwardAgent yes
+ForwardX11 no
+IdentityFile  ~/.ssh/digitalocean_rsa
+
+#MailHost
+Host mailhost
+Hostname mail.katyl.info
+User katyl
+ForwardAgent yes
+ForwardX11 no
+IdentityFile  ~/.ssh/digitalocean_rsa
+
+##GIT SERVICES
+#github
+Host github
+HostName github.com
+#User git
+ForwardX11 no
+IdentityFile  ~/.ssh/git_rsa
+
+#gogs
+Host gogs
+User git
+ForwardX11 no
+IdentityFile  ~/.ssh/git_rsa
+
+#AUR
+host aur
+HostName aur.archlinux.org
+User aur
+ForwardX11 no
+IdentityFile ~/.ssh/git_rsa
+
+#Default Options
+ConnectTimeout 10
+Host *
+HashKnownHosts yes
+FallBackToRsh no
+KeepAlive yes
+AddressFamily inet
+Compression yes
+ServerAliveInterval 10
+HashKnownHosts yes
+ConnectTimeout 30
+ServerAliveInterval 10
+ControlMaster auto
+ControlPersist yes
+        
