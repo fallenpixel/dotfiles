@@ -12,7 +12,9 @@ antigen theme bhilburn/powerlevel9k powerlevel9k
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
 export EDITOR='vim'
 alias vi="vim"
 alias top="htop"
