@@ -1,4 +1,6 @@
 source ~/.dotfiles/antigen/antigen.zsh
+#ZSH Options
+setopt=HIST_IGNORE_SPACE
 #THEMEING
 export TERM="xterm-256color"
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -16,13 +18,20 @@ antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-completions
+antigen bundle hcgraf/zsh-sudo
 #ZSH AUTOSUGGEST
 antigen bundle zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
-bindkey '^ ' autosuggest-accept
 #Set Environmental Variables and Aliases
 export EDITOR='vim'
 alias vi="vim"
 alias top="htop"
+alias ls=' ls --color=auto'
+alias cd=' cd'
+if [ -d ~/.bin/ ]; then
+    PATH=$PATH:~/.bin
+fi
+bindkey -v
+bindkey '^ ' autosuggest-accept
 antigen apply
 
