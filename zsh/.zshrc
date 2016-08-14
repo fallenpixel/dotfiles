@@ -16,7 +16,7 @@ if [[ $OS_CHECK != WINDOWS ]]; then
     POWERLEVEL9K_STATUS_VERBOSE=false
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
     if [[ $HOST  = pyke ]]; then
-	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs battery time)
+	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs time battery)
     else;
     POWERLEEL9k_RIGHT_PPROMPT_ELEMENTS=(ram load background_jobs time)
     fi
