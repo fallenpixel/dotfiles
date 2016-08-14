@@ -7,11 +7,23 @@ if [[ $OS_CHECK != WINDOWS ]]; then
     POWERLEVEL9K_MODE='awesome-fontconfig'
     POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
     POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+    POWERLEVEL9K_BATTERY_CHARGING='yellow'
+    POWERLEVEL9K_BATTERY_CHARGED='green'
+    POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
+    POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
+    POWERLEVEL9K_BATTERY_LOW_COLOR='red'
+    POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
     POWERLEVEL9K_STATUS_VERBOSE=false
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon load context dir vcs)
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
+    if [[ $HOST  = pyke ]]; then
+	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs battery time)
+    else;
+    POWERLEEL9k_RIGHT_PPROMPT_ELEMENTS=(ram load background_jobs time)
+    fi
+    POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}"
     POWERLEVEL9K_SHOW_CHANGESET=true
     POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+    POWERLEVEL9K_PROMPT_ON_NEWLINE=true
     antigen theme bhilburn/powerlevel9k powerlevel9k
 else;
     antigen theme haribo/omz-haribo-theme haribo

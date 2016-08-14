@@ -103,8 +103,10 @@ set tm=500
 " Enable syntax highlighting
 syntax enable 
 set t_Co=256
-"colorscheme lucius
-"LuciusDark
+let g:airline_powerline_fonts = 1
+colorscheme lucius
+let g:airline_theme='lucius'
+LuciusDark
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -129,7 +131,8 @@ set undolevels=10000
 " => Text, tab and indent related{{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-set noexpandtab
+set expandtab
+set tabstop=4
 " Be smart when using tabs ;)
 set smarttab
 " 1 tab == 4 spaces
@@ -201,8 +204,6 @@ set viminfo^=%
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-"Status line managed by vim-airline
-" Vim Airline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " => Editing mappings {{{
