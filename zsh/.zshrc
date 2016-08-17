@@ -45,10 +45,11 @@ alias vi="vim"
 alias top="htop"
 alias ls=' ls --color=auto'
 alias cd=' cd'
+alias sudo='sudo '
 if [ -d ~/.bin/ ]; then
     PATH=$PATH:~/.bin
 fi
 bindkey -v
 bindkey '^ ' autosuggest-accept
 antigen apply
-
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
