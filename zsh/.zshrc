@@ -35,6 +35,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-completions
 antigen bundle hcgraf/zsh-sudo
+antigen bundle robbyrussell/oh-my-zsh plugins/taskwarrior
 #ZSH AUTOSUGGEST
 antigen bundle zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
