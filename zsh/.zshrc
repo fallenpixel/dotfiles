@@ -16,11 +16,11 @@ if [[ $OS_CHECK != WINDOWS ]]; then
     POWERLEVEL9K_STATUS_VERBOSE=false
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
     if [[ $HOST  = pyke ]]; then
-	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs time battery)
+	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram background_jobs time battery)
     else;
     POWERLEEL9k_RIGHT_PPROMPT_ELEMENTS=(ram load background_jobs time)
     fi
-    POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}"
+    POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
     POWERLEVEL9K_SHOW_CHANGESET=true
     POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
     POWERLEVEL9K_PROMPT_ON_NEWLINE=true
