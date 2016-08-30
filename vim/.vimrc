@@ -6,55 +6,19 @@
 " Version:
 "       5.0 - 29/05/12 15:43:36
 "
-" Blog_post:
-"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
-" Syntax_highlighted:
-"       http://amix.dk/vim/vimrc.html
-"
-" Raw_version:
-"       http://amix.dk/vim/vimrc.txt
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Spell checking
-"    -> Misc
-"    -> Helper functions
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " => General {{{"{{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=700
-" Enable filetype plugins
 filetype plugin on
 filetype indent on
-" Set to auto read when a file is changed from the outside
 set autoread
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
-" Fast saving
 nmap <leader>w :w!<cr>
 let $PYTHONPATH='/usr/lib/python3.5/site-packages'
-
 "}}}
 " => VIM user interface {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,20 +61,25 @@ set novisualbell
 set t_vb=
 set tm=500
 
-"}}}"}}}
+"}}}
 " => Colors and Fonts {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
 syntax enable 
+set background=dark
+if (empty($TMUX))
+  if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 set t_Co=256
+let g:one_allow_italics = 1
 let g:airline_powerline_fonts = 1
-colorscheme lucius
-let g:airline_theme='lucius'
-LuciusDark
-" Set utf8 as standard encoding and en_US as the standard language
+colorscheme one
+let g:airline_theme='one'
 set encoding=utf8
-
-" Use Unix as the standard file type
 set ffs=unix,dos,mac
 set rtp+=//usr/lib/python3.5/site-packages/powerline/bindings/vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
@@ -130,14 +99,10 @@ set undolevels=10000
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " => Text, tab and indent related{{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
 set expandtab
 set tabstop=4
-" Be smart when using tabs ;)
 set smarttab
-" 1 tab == 4 spaces
 set shiftwidth=4
-" Linebreak on 500 characters
 set lbr
 set tw=500
 set ai "Auto indent
@@ -344,18 +309,17 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 """"""""""""""""Personal Configs
 " Set Non-Visable Characters on and LineNumbers on.
-set list
+set nolist
 set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 set nu
 set relativenumber
 "Sets fold mode to marker
-"set foldmethod=marker
+set foldmethod=marker
 "Sets w!! to rewrite the file with sudo
 cmap w!! w !sudo tee % >/dev/null
-"Enable Mouse Support
-"set mouse=a
+set mouse=a
 "Enable Paste mode and map to F2
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
