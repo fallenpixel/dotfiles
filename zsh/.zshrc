@@ -17,8 +17,10 @@ if [[ $OS_CHECK != WINDOWS ]]; then
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
     if [[ $HOST  = pyke ]]; then
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram background_jobs time battery)
-    else;
+    elif [[ $HOST = kingslanding ]]; then
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs time)
+    else;
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
     fi
     POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
     POWERLEVEL9K_SHOW_CHANGESET=true
