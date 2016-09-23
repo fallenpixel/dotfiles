@@ -34,7 +34,6 @@ antigen use oh-my-zsh
 #BASIC PLUGINS
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-completions
 antigen bundle hcgraf/zsh-sudo
 antigen bundle robbyrussell/oh-my-zsh plugins/taskwarrior
@@ -43,6 +42,8 @@ antigen bundle robbyrussell/oh-my-zsh plugins/pass
 #ZSH AUTOSUGGEST
 antigen bundle zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
+bindkey '^ ' autosuggest-accept
+antigen bundle zsh-users/zsh-history-substring-search
 #Set Environmental Variables and Aliases
 export EDITOR='vim'
 alias vi="vim"
@@ -54,6 +55,5 @@ if [ -d ~/.bin/ ]; then
     PATH=$PATH:~/.bin
 fi
 bindkey -v
-bindkey '^ ' autosuggest-accept
 antigen apply
 #export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
