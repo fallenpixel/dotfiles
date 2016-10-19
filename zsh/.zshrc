@@ -51,7 +51,7 @@ alias ls=' ls --color=auto'
 alias cd=' cd'
 alias sudo='sudo '
 if [ -d ~/.bin/ ]; then
-    PATH=$PATH:~/.bin
+    export PATH=$PATH:~/.bin
 fi
 bindkey -v
 antigen apply
