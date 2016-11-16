@@ -3,7 +3,7 @@ source ~/.dotfiles/antigen/antigen.zsh
 setopt=HIST_IGNORE_SPACE
 #THEMEING
 if [[ $OS_CHECK != WINDOWS ]]; then
-   # export TERM="xterm-256color"
+    # export TERM="xterm-256color"
    # POWERLEVEL9K_MODE='awesome-fontconfig'
     POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
     POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
@@ -28,6 +28,9 @@ if [[ $OS_CHECK != WINDOWS ]]; then
     antigen theme bhilburn/powerlevel9k powerlevel9k
 else;
     antigen theme haribo/omz-haribo-theme haribo
+fi
+if [[ $HOST = pyke ]]; then
+    source <(envoy -p)
 fi
 antigen use oh-my-zsh
 #BASIC PLUGINS
