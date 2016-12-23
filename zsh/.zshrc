@@ -4,7 +4,7 @@ setopt=HIST_IGNORE_SPACE
 #THEMEING
 if [[ $OS_CHECK != WINDOWS ]]; then
     # export TERM="xterm-256color"
-   # POWERLEVEL9K_MODE='awesome-fontconfig'
+    POWERLEVEL9K_MODE='awesome-fontconfig'
     POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
     POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
     POWERLEVEL9K_BATTERY_CHARGING='yellow'
@@ -12,25 +12,23 @@ if [[ $OS_CHECK != WINDOWS ]]; then
     POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
     POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
     POWERLEVEL9K_BATTERY_LOW_COLOR='red'
+    POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
     POWERLEVEL9K_STATUS_VERBOSE=false
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
-    if [[ $HOST  = pyke ]]; then
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
+    if [[ $HOST  = pyke ]]; then 
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram background_jobs time battery)
     elif [[ $HOST = kingslanding ]]; then
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs time)
     else;
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
     fi
-    POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+    POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
     POWERLEVEL9K_SHOW_CHANGESET=true
     POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
     POWERLEVEL9K_PROMPT_ON_NEWLINE=true
     antigen theme bhilburn/powerlevel9k powerlevel9k
 else;
     antigen theme haribo/omz-haribo-theme haribo
-fi
-if [[ $HOST = pyke ]]; then
-    source <(envoy -p)
 fi
 antigen use oh-my-zsh
 #BASIC PLUGINS
