@@ -3,7 +3,7 @@ source ~/.dotfiles/antigen/antigen.zsh
 setopt=HIST_IGNORE_SPACE
 #THEMEING
 if [[ $OS_CHECK != WINDOWS ]]; then
-    # export TERM="xterm-256color"
+     export TERM="xterm-256color"
     POWERLEVEL9K_MODE='awesome-fontconfig'
     POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
     POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
@@ -18,21 +18,21 @@ if [[ $OS_CHECK != WINDOWS ]]; then
     if [[ $HOST  = pyke ]]; then 
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram background_jobs time battery)
     elif [[ $HOST = kingslanding ]]; then
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs time)
+    #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs time)
     else;
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
     fi
     POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
     POWERLEVEL9K_SHOW_CHANGESET=true
-    POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+   # POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
     POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-    antigen theme bhilburn/powerlevel9k powerlevel9k
+    antigen theme dritter/powerlevel9k powerlevel9k --branch=async_all_the_segments
 else;
     antigen theme haribo/omz-haribo-theme haribo
 fi
 antigen use oh-my-zsh
 #BASIC PLUGINS
-antigen bundle git
+#antigen bundle git
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
