@@ -87,9 +87,9 @@ set rtp+=//usr/lib/python3.5/site-packages/powerline/bindings/vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set swapfile
-set directory=~/.swap/
+set directory=~/.vim/swap/
 set backup
-set backupdir=~/.backup/
+set backupdir=~/.vim/backup/
 if has('persistent_undo')
 set undodir=$TMPDIR,/tmp,/var/tmp
 set undofile
