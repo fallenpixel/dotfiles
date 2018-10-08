@@ -1,0 +1,8 @@
+antigen use oh-my-zsh 
+antigen theme bhilburn/powerlevel9k powerlevel9k --branch=master
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle hcgraf/zsh-sudo
+antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases
+antigen bundle robbyrussell/oh-my-zsh plugins/pass
