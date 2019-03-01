@@ -1,3 +1,4 @@
+include "%L"
 <Multi_key> <period> <period> <period> : "…" U2026       # HORIZONTAL ELLIPSIS
 <Multi_key> <minus> <minus> <space>    : "– "            # EN DASH (followed by space)
 <Multi_key> <backslash> <minus>        : "­"  U00AD       # SOFT HYPHEN
@@ -163,5 +164,5 @@
 <Multi_key> <0> <c>             : "©"   copyright    # COPYRIGHT SIGN
 <Multi_key> <0> <r>             : "®"   registered   # REGISTERED SIGN
 <Multi_key> <t> <m>             : "™"   U2122        # TRADE MARK SIGN
-<Multi_key> <o>                 : "°"   degree       # DEGREE SIGN
+<Multi_key> <o> <o>             : "°"   degree       # DEGREE SIGN
 
