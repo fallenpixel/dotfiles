@@ -44,6 +44,8 @@ alias cd=" cd"
 alias sudo="sudo "
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
+alias cop='cd ~/Documents/School/UF/Summer\ 19/COP3503'
+alias cot='cd ~/Documents/School/UF/Summer\ 19/COT3100'
 
 if [ -d ~/.bin/ ]; then
     export PATH=$PATH:~/.bin
