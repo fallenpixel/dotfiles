@@ -77,7 +77,7 @@ endif
 set t_Co=256
 let g:one_allow_italics = 1
 let g:airline_powerline_fonts = 1
-colorscheme one
+colorscheme desert
 let g:airline_theme='one'
 set encoding=utf8
 set ffs=unix,dos,mac
