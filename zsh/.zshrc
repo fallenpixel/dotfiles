@@ -18,7 +18,6 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 if [[ $HOST = shadow ]]; then
 	    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs )
     else;
-    	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
         POWERLEVEL9K_SHOW_CHANGESET=true
         POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 fi
