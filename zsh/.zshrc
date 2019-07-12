@@ -13,24 +13,26 @@ antigen bundle robbyrussell/oh-my-zsh plugins/pass
 #ZSH Options
 setopt=HIST_IGNORE_SPACE
 #THEMEING
+POWERLEVEL9K_TIME_FORMAT="%T"
 POWERLEVEL9K_MODE="nerdfont-complete"
 if [[ $HOST = shadow ]]; then
 	    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs )
     else;
     	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
-        POWERLEVEL9K_TIME_FORMAT="%T"
         POWERLEVEL9K_SHOW_CHANGESET=true
         POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 fi
     DEFAULT_USER=katyl
-    POWERLEVEL9K_LINUX_ARCH_ICON="\uf300"
+    POWERLEVEL9K_LINUX_ARCH_ICON="\uf303"
+    POWERLEVEL9K_HOME_ICON="\uf7db"
     POWERLEVEL9K_VCS_GIT_ICON="\Uf7a1"
     POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
     POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
     POWERLEVEL9K_DIR_SHOW_WRITABLE=true
     POWERLEVEL9K_STATUS_VERBOSE=true
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon time context newline ssh root_indicator status dir vcs )
-
+    POWERLEVEL9K_LOCK_ICON="\uf456"
+    POWERLEVEL9K_TIME_ICON="\uf64f"
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs newline context dir vcs gitstatus )
 
 #BASIC PLUGINS
 #ZSH AUTOSUGGEST
