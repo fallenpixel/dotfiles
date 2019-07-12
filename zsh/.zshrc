@@ -32,7 +32,7 @@ fi
     POWERLEVEL9K_LOCK_ICON="\uf456"
     POWERLEVEL9K_TIME_ICON="\uf64f"
 if [[ $HOST = thunder || $HOST = storm ]]; then
-        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh background_jobs newline context dir vcs)
+        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh background_jobs newline context dir)
     else;
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs newline context dir vcs gitstatus )
 fi
