@@ -4,7 +4,6 @@ antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen theme romkatv/powerlevel10k powerlevel10k
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MikeDacre/tmux-zsh-vim-titles
-antigen bundle popstas/zsh-command-time
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle hcgraf/zsh-sudo
@@ -34,7 +33,7 @@ fi
 if [[ $HOST = thunder || $HOST = storm ]]; then
         POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh background_jobs newline context dir)
     else;
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs newline context dir vcs gitstatus )
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs command_execution_time newline context dir vcs gitstatus )
 fi
 #BASIC PLUGINS
 #ZSH AUTOSUGGEST
