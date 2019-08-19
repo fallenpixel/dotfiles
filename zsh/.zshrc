@@ -1,7 +1,7 @@
 source $HOME/.dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh 
 antigen bundle unixorn/autoupdate-antigen.zshplugin
-antigen theme romkatv/powerlevel10k powerlevel10k
+antigen theme powerlevel9k/powerlevel9k powerlevel9k
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MikeDacre/tmux-zsh-vim-titles
 antigen bundle zsh-users/zsh-completions
@@ -30,11 +30,7 @@ fi
     POWERLEVEL9K_STATUS_VERBOSE=true
     POWERLEVEL9K_LOCK_ICON="\uf456"
     POWERLEVEL9K_TIME_ICON="\uf64f"
-if [[ $HOST = thunder || $HOST = storm ]]; then
-        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh background_jobs newline context dir)
-    else;
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs command_execution_time newline context dir vcs gitstatus )
-fi
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs command_execution_time newline context dir vcs )
 #BASIC PLUGINS
 #ZSH AUTOSUGGEST
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
