@@ -16,3 +16,9 @@
 [submodule "vim/.vim/bundle/vim-one"]
 	path = vim/.vim/bundle/vim-one
 	url = https://github.com/rakr/vim-one.git
+[submodule "vim/.vim/bundle/vim-markdown"]
+	path = vim/.vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/.vim/bundle/tabular"]
+	path = vim/.vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular

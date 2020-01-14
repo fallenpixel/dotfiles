@@ -10,6 +10,10 @@ antigen bundle hcgraf/zsh-sudo
 antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases
 antigen bundle robbyrussell/oh-my-zsh plugins/pass
 #ZSH Options
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
 setopt=HIST_IGNORE_SPACE
 #THEMEING
 POWERLEVEL9K_TIME_FORMAT="%T"

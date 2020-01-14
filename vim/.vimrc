@@ -317,6 +317,7 @@ set nu
 set relativenumber
 "Sets fold mode to marker
 set foldmethod=marker
+set foldlevelstart=4
 "Sets w!! to rewrite the file with sudo
 cmap w!! w !sudo tee % >/dev/null
 set mouse=a
