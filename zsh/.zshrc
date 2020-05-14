@@ -9,6 +9,10 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle hcgraf/zsh-sudo
 antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases
 antigen bundle robbyrussell/oh-my-zsh plugins/pass
+antigen bundle robbyrussell/oh-my-zsh plugins/taskwarrior
+antigen bundle robbyrussell/oh-my-zsh plugins/python
+antigen bundle robbyrussell/oh-my-zsh plugins/pip
+antigen bundle robbyrussell/oh-my-zsh plugins/virtualenv
 #ZSH Options
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -34,7 +38,7 @@ fi
     POWERLEVEL9K_STATUS_VERBOSE=true
     POWERLEVEL9K_LOCK_ICON="\uf456"
     POWERLEVEL9K_TIME_ICON="\uf64f"
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs command_execution_time newline context dir vcs )
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs command_execution_time newline virtualenv context dir vcs )
 #BASIC PLUGINS
 #ZSH AUTOSUGGEST
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
