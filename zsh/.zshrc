@@ -25,6 +25,7 @@ source ~/.p10k.zsh
 
 
 # Personal Configuration
+SUDO_PROMPT="Enter password: "
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 export EDITOR="vim"
 alias vi="vim"
