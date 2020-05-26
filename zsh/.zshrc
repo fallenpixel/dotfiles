@@ -1,52 +1,31 @@
 source $HOME/.dotfiles/antigen/antigen.zsh
-antigen use oh-my-zsh 
+
+
+
+# Load the oh-my-zsh's library.
+
+antigen use oh-my-zsh
+antigen theme romkatv/powerlevel10k
+
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+
 antigen bundle unixorn/autoupdate-antigen.zshplugin
-antigen theme powerlevel9k/powerlevel9k powerlevel9k
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle MikeDacre/tmux-zsh-vim-titles
-antigen bundle zsh-users/zsh-completions
+antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle hcgraf/zsh-sudo
-antigen bundle robbyrussell/oh-my-zsh plugins/common-aliases
-antigen bundle robbyrussell/oh-my-zsh plugins/pass
-antigen bundle robbyrussell/oh-my-zsh plugins/taskwarrior
-antigen bundle robbyrussell/oh-my-zsh plugins/python
-antigen bundle robbyrussell/oh-my-zsh plugins/pip
-antigen bundle robbyrussell/oh-my-zsh plugins/virtualenv
-#ZSH Options
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory
-setopt=HIST_IGNORE_SPACE
-#THEMEING
-POWERLEVEL9K_TIME_FORMAT="%T"
-POWERLEVEL9K_MODE="nerdfont-complete"
-if [[ $HOST = shadow ]]; then
-	    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ram load background_jobs )
-    else;
-        POWERLEVEL9K_SHOW_CHANGESET=true
-        POWERLEVEL9K_PROMPT_ON_NEWLINE=false
-fi
-    DEFAULT_USER=katyl
-    POWERLEVEL9K_LINUX_ARCH_ICON="\uf303"
-    POWERLEVEL9K_HOME_ICON="\uf7db"
-    POWERLEVEL9K_VCS_GIT_ICON="\Uf7a1"
-    POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-    POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-    POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-    POWERLEVEL9K_STATUS_VERBOSE=true
-    POWERLEVEL9K_LOCK_ICON="\uf456"
-    POWERLEVEL9K_TIME_ICON="\uf64f"
-if [[ $HOST = thunder || $HOST = storm ]]; then
-        POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh background_jobs newline context dir vcs)
-    else;
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator os_icon time ssh  background_jobs newline context dir vcs gitstatus )
-fi
-#BASIC PLUGINS
-#ZSH AUTOSUGGEST
+antigen bundle chrissicool/zsh-256color
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
+antigen bundle zsh-users/zsh-completions 
+antigen bundle laurenkt/zsh-vimto
+
+# Load the theme.
+
+source ~/.p10k.zsh
+
+
+# Personal Configuration
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
-#Set Environmental Variables and Aliases
 export EDITOR="vim"
 alias vi="vim"
 alias top="htop"
@@ -59,10 +38,9 @@ alias cop='cd ~/Documents/School/UF/Summer\ 19/COP3503'
 alias cot='cd ~/Documents/School/UF/Summer\ 19/COT3100'
 
 if [ -d ~/.bin/ ]; then
-    export PATH=$PATH:~/.bin
+export PATH=$PATH:~/.bin
 fi
-bindkey -v
-#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export TERM=xterm-256color
-antigen apply
 
+# Tell Antigen that you're done.
+
+antigen apply
