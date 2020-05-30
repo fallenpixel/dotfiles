@@ -77,7 +77,7 @@ endif
 set t_Co=256
 let g:one_allow_italics = 1
 let g:airline_powerline_fonts = 1
-colorscheme desert
+colorscheme one 
 let g:airline_theme='one'
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -309,7 +309,10 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 """"""""""""""""Personal Configs
 " Set Non-Visable Characters on and LineNumbers on.
+set wildmenu
+set wildmode=longest,list
 set nolist
+set splitright
 set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
