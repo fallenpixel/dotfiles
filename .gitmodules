@@ -25,3 +25,6 @@
 [submodule "vim/.vim/bundle/vim-cpp-enhanced-highlight"]
 	path = vim/.vim/bundle/vim-cpp-enhanced-highlight
 	url = git@github.com:octol/vim-cpp-enhanced-highlight.git
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git

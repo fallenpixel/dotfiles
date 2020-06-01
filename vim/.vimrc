@@ -232,7 +232,16 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
-
+set spellfile=~/.vim/spellfile.add
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1
+highlight SpellBad term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 " => Misc{{{
