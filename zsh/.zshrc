@@ -23,6 +23,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
+antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-completions 
 antigen bundle laurenkt/zsh-vimto
 
@@ -42,8 +43,6 @@ alias cd=" cd"
 alias sudo="sudo "
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias cop='cd ~/Documents/School/UF/Summer\ 19/COP3503'
-alias cot='cd ~/Documents/School/UF/Summer\ 19/COT3100'
 
 if [ -d ~/.bin/ ]; then
 export PATH=$PATH:~/.bin

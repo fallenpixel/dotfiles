@@ -77,8 +77,9 @@ endif
 set t_Co=256
 let g:one_allow_italics = 1
 let g:airline_powerline_fonts = 1
-colorscheme one 
+colorscheme one
 let g:airline_theme='one'
+let g:indent_guides_enable_on_vim_startup = 1
 set encoding=utf8
 set ffs=unix,dos,mac
 set rtp+=//usr/lib/python3.5/site-packages/powerline/bindings/vim
@@ -322,7 +323,8 @@ set wildmenu
 set wildmode=longest,list
 set nolist
 set splitright
-set listchars=tab:▸\ ,eol:¬
+set showbreak=↪\
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 set nu
@@ -358,3 +360,24 @@ vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 nnoremap <F5> :let @/ = ""
 autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
+" Plugin Configs
+"" NERDTree
+filetype plugin indent on
+map <leader>nt :NERDTree<CR>
+
+" Syntastic
+set statusline+=%#warningmsg#
+
+set statusline+=%{SyntasticStatuslineFlag()}
+
+set statusline+=%*
+
+
+
+let g:syntastic_always_populate_loc_list = 1
+
+let g:syntastic_auto_loc_list = 1
+
+let g:syntastic_check_on_open = 1
+
+let g:syntastic_check_on_wq = 0
