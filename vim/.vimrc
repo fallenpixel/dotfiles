@@ -28,7 +28,7 @@ execute pathogen#infect()
 set so=7
 " Turn on the WiLd menu
 set wildmenu
-" Ignore compiled files
+set wildmode=longest,list
 set wildignore=*.o,*~,*.pyc
 "Always show current position
 set ruler
@@ -319,8 +319,6 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""}}}
 """"""""""""""""Personal Configs
 " Set Non-Visable Characters on and LineNumbers on.
-set wildmenu
-set wildmode=longest,list
 set nolist
 set splitright
 set showbreak=↪\
@@ -335,11 +333,7 @@ set foldlevelstart=4
 "Sets w!! to rewrite the file with sudo
 cmap w!! w !sudo tee % >/dev/null
 set mouse=a
-"Enable Paste mode and map to F2
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-set showmode
-"Edit Expansion
+"Edit Expansion leader e? to edit file in same path
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
@@ -360,24 +354,6 @@ vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 nnoremap <F5> :let @/ = ""
 autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
-" Plugin Configs
-"" NERDTree
-filetype plugin indent on
-map <leader>nt :NERDTree<CR>
 
-" Syntastic
-set statusline+=%#warningmsg#
-
-set statusline+=%{SyntasticStatuslineFlag()}
-
-set statusline+=%*
-
-
-
-let g:syntastic_always_populate_loc_list = 1
-
-let g:syntastic_auto_loc_list = 1
-
-let g:syntastic_check_on_open = 1
-
-let g:syntastic_check_on_wq = 0
+source ~/.vim/config/syntastic.vim
+source ~/.vim/config/nerdtree.vim

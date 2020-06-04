@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if  [[ -f "/usr/bin/vimpager" ]]; then
+    PAGER=vimpager 
+    MANPAGER=vimpager
+fi
 source $HOME/.dotfiles/antigen/antigen.zsh
 
 
@@ -16,7 +20,7 @@ antigen theme romkatv/powerlevel10k
 
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-
+antigen bundle colored-man-pages
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -26,6 +30,7 @@ antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-completions 
 antigen bundle laurenkt/zsh-vimto
+antigen bundle 
 
 # Load the theme.
 
