@@ -43,3 +43,6 @@
 [submodule "vim/.vim/bundle/vimwiki"]
 	path = vim/.vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim/.vim/bundle/material.vim"]
+	path = vim/.vim/bundle/material.vim
+	url = https://github.com/kaicataldo/material.vim.git

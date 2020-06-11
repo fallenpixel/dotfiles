@@ -77,8 +77,9 @@ endif
 set t_Co=256
 let g:one_allow_italics = 1
 let g:airline_powerline_fonts = 1
-colorscheme one
-let g:airline_theme='one'
+colorscheme material
+let g:material_theme_style = 'darker'
+let g:airline_theme='material'
 let g:indent_guides_enable_on_vim_startup = 1
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -121,14 +122,6 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
-
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
-
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 " Close the current buffer
