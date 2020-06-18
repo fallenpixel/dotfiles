@@ -31,9 +31,6 @@
 [submodule "vim/.vim/bundle/syntastic"]
 	path = vim/.vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "vim/.vim/bundle/youcompleteme"]
-	path = vim/.vim/bundle/youcompleteme
-	url = https://github.com/valloric/youcompleteme
 [submodule "vim/.vim/bundle/vim-devicons"]
 	path = vim/.vim/bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
@@ -46,3 +43,6 @@
 [submodule "vim/.vim/bundle/material.vim"]
 	path = vim/.vim/bundle/material.vim
 	url = https://github.com/kaicataldo/material.vim.git
+[submodule "vim/.vim/bundle/ale"]
+	path = vim/.vim/bundle/ale
+	url = https://github.com/dense-analysis/ale.git
