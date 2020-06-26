@@ -28,9 +28,6 @@
 [submodule "vim/.vim/bundle/nerdtree"]
 	path = vim/.vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "vim/.vim/bundle/syntastic"]
-	path = vim/.vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "vim/.vim/bundle/vim-devicons"]
 	path = vim/.vim/bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
@@ -46,3 +43,12 @@
 [submodule "vim/.vim/bundle/ale"]
 	path = vim/.vim/bundle/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "vim/.vim/bundle/deoplete.nvim"]
+	path = vim/.vim/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "vim/.vim/bundle/nvim-yarp"]
+	path = vim/.vim/bundle/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp.git
+[submodule "vim/.vim/bundle/vim-hug-neovim-rpc"]
+	path = vim/.vim/bundle/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc.git

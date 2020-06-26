@@ -348,9 +348,12 @@ vmap <C-Down> xp`[V`]
 nnoremap <F5> :let @/ = ""
 autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
 
-source ~/.vim/config/syntastic.vim
 source ~/.vim/config/nerdtree.vim
 
+"Deoplete
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#source('ale', 'dup', v:true)
+set completeopt+=noinsert
 " ALE Configuration
 let g:ale_linters = {
       \   'python': ['flake8', 'pylint', 'yapf'],
