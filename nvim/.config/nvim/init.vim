@@ -1,3 +1,7 @@
+" Install Plugins if not installed
+if empty(glob('~/.local/share/nvim/plugged'))
+  autocmd VimEnter * PlugInstall --sync 
+endif
 call plug#begin('~/.local/share/nvim/plugged')
 " Theming
 Plug 'vim-airline/vim-airline'
@@ -20,7 +24,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 Plug 'ajh17/VimCompletesMe'
 
-" Functional
+" Functiona
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
@@ -60,7 +64,6 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers = ['flake8']
-:command Sc :SyntasticCheck
 let g:indent_guides_enable_on_vim_startup = 1
 nmap <leader>e :Errors<CR> 
 nmap <leader>( :RainbowParentheses!!<CR>
