@@ -7,10 +7,6 @@ fi
 if [ "$HOST" = pyke ]; then
     alias offload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_optimus="NVIDIA_only" __GL_SHOW_GRAPHICS_OSD=1'
 fi
-if  [[ -f "/usr/bin/vimpager" ]]; then
-    PAGER=vimpager 
-    MANPAGER=vimpager
-fi
 source $HOME/.dotfiles/antigen/antigen.zsh
 
 
@@ -42,14 +38,16 @@ source ~/.p10k.zsh
 # Personal Configuration
 SUDO_PROMPT="Enter password: "
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
-export EDITOR="vim"
-alias vi="vim"
+export EDITOR="nvim"
+alias vi="nvim"
+alias vim="nvim"
 alias top="htop"
 alias ls=" ls --color=auto"
 alias cd=" cd"
 alias sudo="sudo "
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
+MANPAGER='nvim -c "set ft=man" -'
 
 if [ -d ~/.bin/ ]; then
 export PATH=$PATH:~/.bin
