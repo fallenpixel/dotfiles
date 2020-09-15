@@ -47,6 +47,7 @@ set lazyredraw
 set ai "Auto Indent
 set si "Smart Indent
 set wrap
+set modeline
 "" List Characters
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
