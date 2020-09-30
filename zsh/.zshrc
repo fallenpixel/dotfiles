@@ -47,7 +47,7 @@ alias cd=" cd"
 alias sudo="sudo "
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias rep-reboot='ssh casterlyrock "adb connect reptilian:5555; adb shell 'reboot'"'
+alias rep-reboot='ssh casterlyrock "adb connect reptilian:5555; adb -s reptilian:5555 shell 'reboot'"'
 MANPAGER='nvim -c "set ft=man" -'
 
 if [ -d ~/.bin/ ]; then
