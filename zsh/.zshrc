@@ -48,6 +48,7 @@ alias sudo="sudo "
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias rep-reboot='ssh casterlyrock "adb connect reptilian:5555; adb shell 'reboot'"'
+alias codemusic="mpv --no-video --shuffle 'https://www.youtube.com/playlist?list=PLUja9J5M1XReqoBal5IKog_PWz2Q_hZ7Y'"
 MANPAGER='nvim -c "set ft=man" -'
 
 if [ -d ~/.bin/ ]; then
