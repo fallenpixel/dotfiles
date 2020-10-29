@@ -8,8 +8,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
+Plug 'wellle/context.vim'
 " Coding
 "" Print current method/function in statusline
+Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
 "" Syntax highlighting
 "" Indent Guides
@@ -63,7 +65,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 nmap <leader>e :Errors<CR> 
 nmap <leader>( :RainbowParentheses!!<CR>
 nmap <leader>w :TagbarToggle<CR>
-nmap <leader>q :NerdTreeToggle<CR>
+nmap <leader>q :NERDTreeToggle<CR>
 
 " Control direction to move line
 nmap <M-j> mz:m+<cr>`z
@@ -75,7 +77,7 @@ vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
-  exe "normal `z"
+  exe "normal `z"3fqqcdre
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
@@ -101,6 +103,7 @@ highlight SpellLocal term=underline cterm=underline
 " Paste from GUI
 set pastetoggle=<F2>
 map <leader>pp :setlocal paste!<cr>
+let g:tex_flavor='latex'
 
 
 
@@ -235,3 +238,7 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+" Eric's Custom Commands
+nmap <leader>l :w <bar> !pdflatex % <CR> <CR>
