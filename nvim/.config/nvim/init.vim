@@ -8,10 +8,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
-Plug 'wellle/context.vim'
 " Coding
 "" Print current method/function in statusline
-Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
 "" Syntax highlighting
 "" Indent Guides
@@ -54,13 +52,7 @@ highlight SpecialKey guifg=#4a4a59
 :syntax on
 set colorcolumn=80
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['flake8']
 let g:indent_guides_enable_on_vim_startup = 1
 nmap <leader>e :Errors<CR> 
 nmap <leader>( :RainbowParentheses!!<CR>
@@ -242,3 +234,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Eric's Custom Commands
 nmap <leader>l :w <bar> !pdflatex % <CR> <CR>
+
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
+map <C-t>t 	:tabnew<cr>
+
+command! Config execute ":e $MYVIMRC"
+command! Reload execute "source ~/.config/nvim/init.vim"
