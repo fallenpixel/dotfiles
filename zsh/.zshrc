@@ -42,7 +42,6 @@ export EDITOR="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias top="htop"
-alias ls=" ls --color=auto"
 alias cd=" cd"
 alias sudo="sudo "
 alias diff='diff --color=auto'
@@ -53,6 +52,14 @@ MANPAGER='nvim -c "set ft=man" -'
 
 if [ -d ~/.bin/ ]; then
 export PATH=$PATH:~/.bin
+fi
+if [ -e /bin/bat ]; then
+	alias cat='bat'
+fi
+if [ -e /bin/lsd ]; then
+	alias ls='lsd'
+else; 
+	alias ls='ls --color=auto'
 fi
 
 # Tell Antigen that you're done.
