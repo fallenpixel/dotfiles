@@ -1,0 +1,1 @@
+/home/katyl/.dotfiles/ssh/.config/environment.d/ssh_env.sh
