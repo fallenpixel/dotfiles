@@ -13,7 +13,7 @@ source $HOME/.dotfiles/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 
-antigen use oh-my-zsh
+# antigen use oh-my-zsh
 antigen theme romkatv/powerlevel10k
 
 
@@ -59,7 +59,7 @@ fi
 if [ -e /bin/lsd ]; then
 	alias ls='lsd'
 else; 
-	alias ls='ls --color=auto'
+#	alias ls='ls --color=auto'
 fi
 
 # Tell Antigen that you're done.
