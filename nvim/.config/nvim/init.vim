@@ -7,11 +7,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'danilo-augusto/vim-afterglow'
 " Coding
 "" Print current method/function in statusline
 Plug 'majutsushi/tagbar'
 "" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
 "" Indent Guides
 Plug 'nathanaelkane/vim-indent-guides'
 "" Completion
@@ -27,8 +29,9 @@ call plug#end()
 let mapleader=","
 
 " Set Colorscheme and Fonts
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme afterglow
+let g:airline_theme='afterglow'
+let g:afterglow_inherit_background=1
 let g:airline_powerline_fonts = 1
 
 " Behavior
