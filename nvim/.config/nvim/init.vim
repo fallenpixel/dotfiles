@@ -7,9 +7,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'morhetz/gruvbox'
-Plug 'danilo-augusto/vim-afterglow'
+Plug 'vim-airline/vim-airline-themes'
 " Coding
+Plug 'jacoborus/tender.vim'
 "" Print current method/function in statusline
 Plug 'majutsushi/tagbar'
 "" Syntax highlighting
@@ -29,11 +29,13 @@ call plug#end()
 let mapleader=","
 
 " Set Colorscheme and Fonts
-colorscheme afterglow
-let g:airline_theme='afterglow'
-let g:afterglow_inherit_background=1
+if (has("termguicolors"))
+  set termguicolors
+endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme tender
+let g:airline_theme='tender'
 let g:airline_powerline_fonts = 1
-
 " Behavior
 set mouse=a
 set number
@@ -99,6 +101,7 @@ highlight SpellLocal term=underline cterm=underline
 set pastetoggle=<F2>
 map <leader>pp :setlocal paste!<cr>
 let g:tex_flavor='latex'
+
 
 
 
