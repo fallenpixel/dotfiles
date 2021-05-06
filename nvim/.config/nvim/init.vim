@@ -20,7 +20,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 filetype plugin on
 :filetype plugin indent on
 
-" Functiona
+" Functional
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
