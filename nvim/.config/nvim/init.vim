@@ -169,6 +169,7 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+let g:coc_disable_startup_warning = 1
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
