@@ -50,7 +50,7 @@ alias rep-reboot='ssh casterlyrock "adb connect reptilian:5555; adb shell 'reboo
 alias codemusic="mpv --no-video --shuffle 'https://www.youtube.com/playlist?list=PLUja9J5M1XReqoBal5IKog_PWz2Q_hZ7Y'"
 alias shantytime="mpv --no-video -shuffle 'https://www.youtube.com/playlist?list=PLfxnB1YXnxp7ADOru6TZAv1sfQhE-7ht7'"
 MANPAGER='nvim -c "set ft=man" -'
-TMP='/tmp/'
+TMPDIR='/tmp/'
 
 if [ -d ~/.bin/ ]; then
 export PATH=$PATH:~/.bin
