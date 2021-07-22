@@ -16,6 +16,8 @@ Plug 'majutsushi/tagbar'
 Plug 'sheerun/vim-polyglot'
 "" Indent Guides
 Plug 'nathanaelkane/vim-indent-guides'
+"" Color scheme
+Plug 'arcticicestudio/nord-vim'
 "" Completion
 filetype plugin on
 :filetype plugin indent on
@@ -33,8 +35,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme tender
-let g:airline_theme='tender'
+colorscheme nord
+let g:airline_theme='nord'
 let g:airline_powerline_fonts = 1
 " Behavior
 set mouse=a
@@ -249,4 +251,3 @@ map <C-t><right> :tabn<cr>
 map <C-t>t 	:tabnew<cr>
 
 command! Config execute ":e $MYVIMRC"
-command! Reload execute "source ~/.config/nvim/init.vim"
