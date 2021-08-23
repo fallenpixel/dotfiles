@@ -27,5 +27,12 @@
         }
       }
     }
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "yaml"],
+  "yaml.format.enable": true,
+  "yaml.schemaStore.enable": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/ansible-playbook.json": "yaml.ansible"
+  },
+  "yaml.trace.server": "verbose"
 }

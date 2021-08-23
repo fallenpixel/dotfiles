@@ -8,8 +8,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
-" Coding
-Plug 'jacoborus/tender.vim'
+Plug 'phenomenes/ansible-snippets'
+Plug 'juliosueiras/vim-terraform-snippets'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 "" Print current method/function in statusline
 Plug 'majutsushi/tagbar'
 "" Syntax highlighting
@@ -22,10 +25,14 @@ Plug 'arcticicestudio/nord-vim'
 filetype plugin on
 :filetype plugin indent on
 
+"" Syntax Highlighting Options
+let g:ansible_unindent_after_newline = 1
+let g:ansible_name_highlight = 'd'
+let g:ansible_extra_keywords_highlight = 1
+
 " Functional
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-
 call plug#end()
 
 let mapleader=","
@@ -61,8 +68,6 @@ set colorcolumn=80
 set statusline+=%#warningmsg#
 set statusline+=%*
 let g:indent_guides_enable_on_vim_startup = 1
-nmap <leader>e :Errors<CR> 
-nmap <leader>( :RainbowParentheses!!<CR>
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>q :NERDTreeToggle<CR>
 
@@ -71,15 +76,6 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"3fqqcdre
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Spell Checking
 map <leader>ss :setlocal spell!<cr>
@@ -104,11 +100,8 @@ set pastetoggle=<F2>
 map <leader>pp :setlocal paste!<cr>
 let g:tex_flavor='latex'
 
-
-
-
-
 " coc config
+set cmdheight=2
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-tsserver',
@@ -118,6 +111,9 @@ let g:coc_global_extensions = [
   \ 'coc-texlab',
   \ 'coc-yaml'
   \ ]
+let g:coc_filetype_map = {
+      \ 'yaml.ansible': 'yaml',
+      \ }
 " from readme
 " if hidden is not set, TextEdit might fail.
 set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
@@ -244,7 +240,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " Eric's Custom Commands
 nmap <leader>l :w <bar> !pdflatex % <CR> <CR>
 
-map <C-t><up> :tabr<cr>
+map <C-t><up> :tabr<cr>/
 map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>

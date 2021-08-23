@@ -7,6 +7,8 @@ fi
 if [ "$HOST" = pyke ]; then
     alias offload='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_optimus="NVIDIA_only" __GL_SHOW_GRAPHICS_OSD=1'
 fi
+export VAGRANT_DEFAULT_PROVIDER=libvirt
+export LIBVIRT_DEFAULT_URI="qemu+ssh://katyl@casterlyrock/system"
 source $HOME/.dotfiles/antigen/antigen.zsh
 
 
