@@ -1,26 +1,4 @@
-" Install Plugins if not installed
-if empty(glob('~/.local/share/nvim/plugged'))
-  autocmd VimEnter * PlugInstall --sync 
-endif
-call plug#begin('~/.local/share/nvim/plugged')
-" Theming
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'phenomenes/ansible-snippets'
-Plug 'juliosueiras/vim-terraform-snippets'
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-"" Print current method/function in statusline
-Plug 'majutsushi/tagbar'
-"" Syntax highlighting
-Plug 'sheerun/vim-polyglot'
-"" Indent Guides
-Plug 'nathanaelkane/vim-indent-guides'
-"" Color scheme
-Plug 'arcticicestudio/nord-vim'
+source $HOME/.config/nvim/configs/plugins.vim
 "" Completion
 filetype plugin on
 :filetype plugin indent on
@@ -30,10 +8,6 @@ let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
 
-" Functional
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-call plug#end()
 
 let mapleader=","
 
@@ -65,6 +39,7 @@ highlight SpecialKey guifg=#4a4a59
 " Linting/CodeDisplay
 :syntax on
 set colorcolumn=80
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%#warningmsg#
 set statusline+=%*
 let g:indent_guides_enable_on_vim_startup = 1
