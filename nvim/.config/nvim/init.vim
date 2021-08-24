@@ -16,8 +16,13 @@ set splitbelow
 set splitright
 
 
+
 let mapleader=","
 
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " Set Colorscheme and Fonts
 if (has("termguicolors"))
   set termguicolors
