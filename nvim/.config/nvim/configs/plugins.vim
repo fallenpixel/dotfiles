@@ -10,6 +10,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'juliosueiras/vim-terraform-snippets'
 " Linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 " Git functionality
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'

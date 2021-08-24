@@ -9,8 +9,13 @@ let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
 
 
+
 let mapleader=","
 
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " Set Colorscheme and Fonts
 if (has("termguicolors"))
   set termguicolors
