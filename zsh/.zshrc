@@ -67,5 +67,10 @@ else;
 fi
 
 # Tell Antigen that you're done.
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle :compinstall filename '/home/katyl/test'
 
+autoload -Uz compinit
+compinit
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 antigen apply
