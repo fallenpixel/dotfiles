@@ -28,8 +28,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme nord
-let g:airline_theme='nord'
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 " Behavior
 set mouse=a

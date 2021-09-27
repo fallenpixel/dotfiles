@@ -25,10 +25,12 @@ Plug 'sheerun/vim-polyglot'
 "" Indent Guides
 Plug 'nathanaelkane/vim-indent-guides'
 "" Color scheme
-Plug 'arcticicestudio/nord-vim'
+Plug 'rktjmp/lush.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 " NerdTree and Commenter
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 " Ansible
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh --output yaml.snippets' }
+Plug 'ellisonleao/gruvbox.nvim'
 call plug#end()
