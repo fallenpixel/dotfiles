@@ -29,8 +29,9 @@ if (has("termguicolors"))
 endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colorscheme gruvbox
-let g:airline_theme='gruvbox'
+let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 " Behavior
 set mouse=a
 set number
@@ -88,7 +89,6 @@ map <leader>pp :setlocal paste!<cr>
 let g:tex_flavor='latex'
 
 " coc config
-set cmdheight=2
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-tsserver',

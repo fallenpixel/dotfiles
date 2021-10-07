@@ -7,6 +7,7 @@ fi
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 if [ "$HOST" = shadow ]; then
   export LIBVIRT_DEFAULT_URI="qemu+ssh://katyl@casterlyrock/system"
+  export DOCKER_HOST=ssh://katyl@casterlyrock
 fi
 source $HOME/.dotfiles/antigen/antigen.zsh
 
@@ -34,7 +35,6 @@ antigen bundle
 # Load the theme.
 
 source ~/.p10k.zsh
-
 
 # Personal Configuration
 SUDO_PROMPT="Enter password: "
