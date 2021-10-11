@@ -30,6 +30,7 @@ Plug 'ellisonleao/gruvbox.nvim'
 " NerdTree and Commenter
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
 " Ansible
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh --output yaml.snippets' }
 call plug#end()
