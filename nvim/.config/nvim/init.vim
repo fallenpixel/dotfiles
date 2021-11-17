@@ -92,8 +92,8 @@ let g:tex_flavor='latex'
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-prettier', 
+  \ 'coc-eslint',
+  \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-texlab',
   \ 'coc-yaml'
