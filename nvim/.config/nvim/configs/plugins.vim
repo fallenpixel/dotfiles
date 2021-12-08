@@ -22,11 +22,18 @@ Plug 'sheerun/vim-polyglot'
 "" Indent Guides
 Plug 'nathanaelkane/vim-indent-guides'
 "" Color scheme
-Plug 'rktjmp/lush.nvim'
-Plug 'ellisonleao/gruvbox.nvim'
+Plug 'rktjmp/lush.nvim', { 'branch': 'main' }
+Plug 'ellisonleao/gruvbox.nvim', { 'branch': 'main' }
 " NerdTree and Commenter
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
+Plug 'hrsh7th/cmp-buffer', { 'branch': 'main' }
+Plug 'hrsh7th/cmp-path', { 'branch': 'main' }
+Plug 'hrsh7th/cmp-cmdline', { 'branch': 'main' }
+Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip', { 'branch': 'main' }
 call plug#end()
