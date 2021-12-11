@@ -30,7 +30,7 @@ antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-completions 
 antigen bundle laurenkt/zsh-vimto
-antigen bundle 
+antigen bundle olets/zsh-abbr
 
 # Load the theme.
 
