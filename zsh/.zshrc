@@ -72,5 +72,5 @@ compinit
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 antigen apply
 if [[ -f ~/.zshrc.local ]]; then
-  source .zshrc.local
+  source ~/.zshrc.local
 fi
