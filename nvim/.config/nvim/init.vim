@@ -75,8 +75,8 @@ call plug#begin(data_dir . '/plugins')
 
 source ~/.config/nvim/plugins/vim-airline.vim
 source ~/.config/nvim/plugins/gruvbox.vim
+" source ~/.config/nvim/plugins/nightfox.vim
 source ~/.config/nvim/plugins/polyglot.vim
-source ~/.config/nvim/plugins/vim-devicons.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/signify.vim
 source ~/.config/nvim/plugins/fugitive.vim
@@ -91,6 +91,7 @@ source ~/.config/nvim/plugins/lion.vim
 source ~/.config/nvim/plugins/peekabo.vim
 source ~/.config/nvim/plugins/targets.vim
 source ~/.config/nvim/plugins/floatingterm.vim
-"source ~/.config/nvim/plugins/whichkeys.vim
+" source ~/.config/nvim/plugins/lualine.vim
+" source ~/.config/nvim/plugins/whichkeys.vim
 call plug#end()
 doautocmd User PlugLoaded

@@ -21,13 +21,13 @@ antigen theme romkatv/powerlevel10k
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle colored-man-pages
+antigen bundle zpm-zsh/colorize
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
-antigen bundle zdharma/fast-syntax-highlighting
+antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-completions 
 antigen bundle laurenkt/zsh-vimto
 antigen bundle olets/zsh-abbr
@@ -73,3 +73,6 @@ autoload -Uz compinit
 compinit
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 antigen apply
+if [[ -f ~/.zshrc.local ]]; then
+  source .zshrc.local
+fi
