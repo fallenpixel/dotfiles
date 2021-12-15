@@ -32,6 +32,7 @@ antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-completions 
 antigen bundle laurenkt/zsh-vimto
 antigen bundle olets/zsh-abbr
+antigen bundle nnao45/zsh-kubectl-completion
 
 # Load the theme.
 
