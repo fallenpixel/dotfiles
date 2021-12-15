@@ -24,7 +24,7 @@ antigen bundle colored-man-pages
 antigen bundle zpm-zsh/colorize
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle git
-antigen bundle docker
+antigen bundle greymd/docker-zsh-completion
 antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
