@@ -1,9 +1,6 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 if [ "$HOST" = shadow ]; then
   export LIBVIRT_DEFAULT_URI="qemu+ssh://katyl@casterlyrock/system"
@@ -72,7 +69,10 @@ zstyle :compinstall filename '/home/katyl/test'
 autoload -Uz compinit
 compinit
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-antigen apply
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
+fi
+antigen apply
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
