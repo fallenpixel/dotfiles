@@ -91,6 +91,7 @@ source ~/.config/nvim/plugins/lion.vim
 source ~/.config/nvim/plugins/peekabo.vim
 source ~/.config/nvim/plugins/targets.vim
 source ~/.config/nvim/plugins/floatingterm.vim
+source ~/.config/nvim/plugins/easyalign.vim
 " source ~/.config/nvim/plugins/lualine.vim
 " source ~/.config/nvim/plugins/whichkeys.vim
 call plug#end()
