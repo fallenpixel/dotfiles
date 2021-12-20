@@ -59,7 +59,7 @@ fi
 if [ -e /bin/lsd ]; then
 	alias ls='lsd'
 else; 
-#	alias ls='ls --color=auto'
+	alias ls='ls --color=auto'
 fi
 
 # Tell Antigen that you're done.
