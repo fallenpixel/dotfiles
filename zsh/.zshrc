@@ -16,6 +16,7 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle laurenkt/zsh-vimto
 antigen bundle olets/zsh-abbr
 antigen bundle nnao45/zsh-kubectl-completion
+antigen bundle reegnz/jq-zsh-plugin
 # }}}
 # Personal Configuration {{{
 SUDO_PROMPT="Enter password: "
