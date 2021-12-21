@@ -1,6 +1,4 @@
-"--------------------------------------------------------------------------
-" General Settings
-"--------------------------------------------------------------------------
+" General Settings {{{
 filetype plugin on
 :filetype plugin indent on
 let g:indent_guides_enable_on_vim_startup = 1
@@ -20,13 +18,12 @@ set si
 set wrap
 set modeline
 set colorcolumn=80
+set foldmethod=marker
 let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'
 let g:ansible_extra_keywords_highlight = 1
-
-"--------------------------------------------------------------------------
-" KeyMaps
-"--------------------------------------------------------------------------
+" }}}
+" KeyMaps {{{
 let mapleader = ","
 nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
@@ -43,9 +40,8 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 nmap <leader>f <cmd>lua vim.lsp.buf.formatting_sync(nil, 100)<cr>
-"--------------------------------------------------------------------------
-" Spellchecking
-"--------------------------------------------------------------------------
+" }}}
+" Spellchecking {{{
 map <leader>ss :setlocal spell!<cr>
 set spelllang=en_us
 map <leader>sn ]s
@@ -62,9 +58,8 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
-"--------------------------------------------------------------------------
-" Plugins
-"--------------------------------------------------------------------------
+" }}}
+" Plugins {{{
 " Automatically install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -97,3 +92,4 @@ source ~/.config/nvim/plugins/easyalign.vim
 " source ~/.config/nvim/plugins/whichkeys.vim
 call plug#end()
 doautocmd User PlugLoaded
+" }}}
