@@ -45,7 +45,7 @@ if [[ -d ~/.bin/ ]]; then
   export PATH=$PATH:~/.bin
 fi
 if [[ -d ~/.local/bin ]]; then
-  exoirt PATH=$PATH:~/.local/bin
+  export PATH=$PATH:~/.local/bin
 fi
 if [[ -e /usr/bin/bat ]] then
   alias cat='bat'
