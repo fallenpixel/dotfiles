@@ -1,5 +1,6 @@
 local packer = require('packer')
 local use = packer.use
+local default_options = {noremap = true, silent = true}
 
 use 'neovim/nvim-lspconfig'
 use 'hrsh7th/cmp-nvim-lsp'
@@ -89,3 +90,21 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
 }
+
+vim.api.nvim_set_keymap('n', 'gD',        '<cmd>lua vim.lsp.buf.declaration()<CR>',                                default_options)
+vim.api.nvim_set_keymap('n', 'gd',        '<cmd>lua vim.lsp.buf.definition()<CR>',                                 default_options)
+vim.api.nvim_set_keymap('n', 'K',         '<cmd>lua vim.lsp.buf.hover()<CR>',                                      default_options)
+vim.api.nvim_set_keymap('n', 'gi',        '<cmd>lua vim.lsp.buf.implementation()<CR>',                             default_options)
+vim.api.nvim_set_keymap('n', '<C-k>',     '<cmd>lua vim.lsp.buf.signature_help()<CR>',                             default_options)
+vim.api.nvim_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',                       default_options)
+vim.api.nvim_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',                    default_options)
+vim.api.nvim_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', default_options)
+vim.api.nvim_set_keymap('n', '<space>D',  '<cmd>lua vim.lsp.buf.type_definition()<CR>',                            default_options)
+vim.api.nvim_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>',                                     default_options)
+vim.api.nvim_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>',                                default_options)
+vim.api.nvim_set_keymap('n', 'gr',        '<cmd>lua vim.lsp.buf.references()<CR>',                                 default_options)
+vim.api.nvim_set_keymap('n', '<space>e',  '<cmd>lua vim.diagnostic.open_float()<CR>',                              default_options)
+vim.api.nvim_set_keymap('n', '[d',        '<cmd>lua vim.diagnostic.goto_prev()<CR>',                               default_options)
+vim.api.nvim_set_keymap('n', ']d',        '<cmd>lua vim.diagnostic.goto_next()<CR>',                               default_options)
+vim.api.nvim_set_keymap('n', '<space>q',  '<cmd>lua vim.diagnostic.setloclist()<CR>',                              default_options)
+vim.api.nvim_set_keymap('n', '<space>f',  '<cmd>lua vim.lsp.buf.formatting()<CR>',                                 default_options)

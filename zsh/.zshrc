@@ -12,7 +12,7 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
 antigen bundle zdharma-continuum/fast-syntax-highlighting
-antigen bundle zsh-users/zsh-completions 
+antigen bundle zsh-users/zsh-completions
 antigen bundle laurenkt/zsh-vimto
 antigen bundle olets/zsh-abbr
 antigen bundle nnao45/zsh-kubectl-completion
@@ -45,12 +45,12 @@ if [[ -d ~/.bin/ ]]; then
 export PATH=$PATH:~/.bin
 fi
 if [[ -e /usr/bin/bat ]] then
-	alias cat='bat'
+  alias cat='bat'
 fi
 if [[ -e /usr/bin/lsd ]] then
-	alias ls='lsd'
+  alias ls='lsd'
 else
-	alias ls='ls --color=auto'
+  alias ls='ls --color=auto'
 fi
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
@@ -65,3 +65,4 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 # }}}
+# vim: ft=sh
