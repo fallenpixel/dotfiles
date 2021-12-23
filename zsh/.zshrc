@@ -37,19 +37,19 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
 # }}}
 # Conditional Configuration {{{
-if [ "$HOST" = shadow ]; then
+if [[ "$HOST" = shadow ]]; then
   export LIBVIRT_DEFAULT_URI="qemu+ssh://katyl@casterlyrock/system"
   export DOCKER_HOST=ssh://katyl@casterlyrock
 fi
-if [ -d ~/.bin/ ]; then
+if [[ -d ~/.bin/ ]]; then
 export PATH=$PATH:~/.bin
 fi
-if [ -e /bin/bat ]; then
+if [[ -e /usr/bin/bat ]] then
 	alias cat='bat'
 fi
-if [ -e /bin/lsd ]; then
+if [[ -e /usr/bin/lsd ]] then
 	alias ls='lsd'
-else; 
+else
 	alias ls='ls --color=auto'
 fi
 if [[ -f ~/.zshrc.local ]]; then
