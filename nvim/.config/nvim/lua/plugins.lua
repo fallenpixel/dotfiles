@@ -27,7 +27,6 @@ packer.init {
 local use = packer.use
 packer.reset()
 use 'wbthomason/packer.nvim'
-require('comment')
 require('themeing')
 require('polyglot')
 require('telescope')
@@ -48,3 +47,4 @@ require('peekaboo')
 require('targets')
 require('floatingterm')
 require('betterwhitespace')
+require('comment')
