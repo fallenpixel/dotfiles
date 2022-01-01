@@ -1,9 +1,9 @@
 # Use Antigen {{{
+
 source $HOME/.dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle docker
-antigen theme romkatv/powerlevel10k
 antigen bundle colored-man-pages
 antigen bundle zpm-zsh/colorize
 antigen bundle unixorn/autoupdate-antigen.zshplugin
@@ -17,6 +17,8 @@ antigen bundle laurenkt/zsh-vimto
 antigen bundle olets/zsh-abbr
 antigen bundle nnao45/zsh-kubectl-completion
 antigen bundle reegnz/jq-zsh-plugin
+antigen theme romkatv/powerlevel10k
+
 # }}}
 # Conditional Configuration {{{
 if [[ "$HOST" = shadow ]]; then
@@ -61,6 +63,10 @@ zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+bindkey -M vicmd x run-help
+function foreground-nvim(){fg %nvim}
+zle -N foreground-nvim
+bindkey -M vicmd z foreground-nvim
 # }}}
 # Bookmarks {{{
 hash -d -- dotfiles=$HOME/.dotfiles/
