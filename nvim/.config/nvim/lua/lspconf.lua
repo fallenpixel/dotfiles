@@ -10,6 +10,7 @@ use 'hrsh7th/cmp-cmdline'
 use 'hrsh7th/nvim-cmp'
 use 'L3MON4D3/LuaSnip'
 use 'saadparwaiz1/cmp_luasnip'
+use 'nvim-lua/lsp-status.nvim'
 
 local cmp = require'cmp'
 cmp.setup({
@@ -44,9 +45,6 @@ cmp.setup.cmdline(':', {
   })
 })
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-require('lspconfig')['pyright'].setup{
-  capabilities = update_capabilities
-}
 require('lspconfig')['texlab'].setup {
   capabilities = capabilities
 }
@@ -62,8 +60,11 @@ require('lspconfig')['yamlls'].setup {
 require('lspconfig')['bashls'].setup {
   capabilities = capabilities
 }
+require('lspconfig')['jedi_language_server'].setup {
+  capabilities = capabilities
+}
 local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "")
 table.insert(runtime_path, "lua/?/init.lua")
 
 require'lspconfig'.sumneko_lua.setup {

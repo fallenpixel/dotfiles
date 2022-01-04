@@ -45,6 +45,7 @@ fi
 # }}}
 # Personal Configuration {{{
 SUDO_PROMPT="Enter password: "
+ANSIBLE_NOCOWS=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 export EDITOR="nvim"
 alias vi="nvim"
