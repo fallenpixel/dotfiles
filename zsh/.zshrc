@@ -64,7 +64,6 @@ zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-bindkey -M vicmd x run-help
 function foreground-nvim(){fg %nvim}
 zle -N foreground-nvim
 bindkey -M vicmd z foreground-nvim
