@@ -44,8 +44,8 @@ if [[ -f ~/.zshrc.local ]]; then
 fi
 # }}}
 # Personal Configuration {{{
-SUDO_PROMPT="Enter password: "
-ANSIBLE_NOCOWS=1
+export SUDO_PROMPT="Enter password: "
+export ANSIBLE_NOCOWS=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 export EDITOR="nvim"
 alias vi="nvim"
