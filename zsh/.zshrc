@@ -1,3 +1,9 @@
+#          _
+#  _______| |__
+# |_  / __| '_ \
+#  / /\__ \ | | |
+# /___|___/_| |_|
+
 # Use Antigen {{{
 
 source $HOME/.dotfiles/antigen/antigen.zsh
@@ -48,6 +54,8 @@ export SUDO_PROMPT="Enter password:  "
 export ANSIBLE_NOCOWS=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 export EDITOR="nvim"
+export PAGER="less"
+export LESS="-iFXR"
 alias vi="nvim"
 alias vim="nvim"
 alias top="htop"
