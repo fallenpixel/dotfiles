@@ -14,6 +14,10 @@ dial.augends["custom#boolean"] = dial.common.enum_cyclic{
     name = "boolean",
     strlist = {"true", "false"},
 }
+dial.augends["custom#yesno"] = dial.common.enum_cyclic{
+    name = "yesno",
+    strlist = {"yes", "no"},
+}
 dial.config.searchlist.normal = {
   "number#decimal",
   "number#decimal#int",
@@ -27,5 +31,6 @@ dial.config.searchlist.normal = {
   "date#[%H:%M]",
   "color#hex",
   "markup#markdown#header",
-  "custom#boolean"
+  "custom#boolean",
+  "custom#yesno"
 }
