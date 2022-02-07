@@ -29,7 +29,7 @@ packer.reset()
 use 'wbthomason/packer.nvim'
 require('themeing')
 require('polyglot')
-require('telescope')
+require('tele')
 require('signify')
 require('fugitive')
 require('easyalign')
