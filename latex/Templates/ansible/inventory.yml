@@ -1,0 +1,12 @@
+---
+all:
+  hosts:
+    host1:
+      ansible_user: fallenpixel
+  vars:
+    ansible_python_interpreter: "auto_silent"
+  children:
+    devstation:
+      hosts:
+        host1:
+

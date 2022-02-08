@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+  environment:
+    # foo: "{{ bar }}"
+- hosts: virt
+  tasks:
+  environment:
