@@ -1,48 +1,5 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-local lspconfig = require('lspconfig')
-local servers = { 'texlab', 'tflint', 'bashls', 'jedi_language_server' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
-end
-lspconfig.ansiblels.setup{
-  settings = {
-    ansible = {
-      ansible = {
-        useFullyQualifiedCollectionNames = true
-      }
-    }
-  }
-}
-lspconfig.sumneko_lua.setup {
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
 local luasnip = require 'luasnip'
--- nvim-cmp setup
+vim.opt.completeopt = {'menu', 'menuone' , 'noselect'}
 local cmp = require 'cmp'
 cmp.setup {
   snippet = {
@@ -83,6 +40,49 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'buffer' }
   },
 }
-
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+local lspconfig = require('lspconfig')
+local servers = { 'texlab', 'tflint', 'bashls', 'jedi_language_server', 'ansiblels', 'sumneko_lua'}
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    -- on_attach = my_custom_on_attach,
+    capabilities = capabilities,
+    settings = {
+      ansible = {
+        ansible = {
+          useFullyQualifiedCollectionNames = true
+        }
+      },
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = 'LuaJIT',
+          -- Setup your lua path
+          path = runtime_path,
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {'vim'},
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
+        },
+      },
+    }
+  }
+end
