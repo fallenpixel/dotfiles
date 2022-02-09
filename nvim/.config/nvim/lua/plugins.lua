@@ -6,7 +6,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'sheerun/vim-polyglot'
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
   use 'junegunn/vim-easy-align'
@@ -45,10 +44,14 @@ return require('packer').startup(function(use)
       prefix = "s"
     }
   }
-
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
       'nvim-lua/popup.nvim',
       'ElPiloto/telescope-vimwiki.nvim',
       {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'} }
