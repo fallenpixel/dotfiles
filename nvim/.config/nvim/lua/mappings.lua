@@ -50,4 +50,5 @@ map("n", "<leader>fb",         "<cmd>lua require('telescope.builtin').buffers()<
 map("n", "<leader>fh",         "<cmd>lua require('telescope.builtin').help_tags()<cr>",                                                        default_options)
 map("n", "<leader>fd",         "<cmd>lua require('telescope.builtin').git_files({ hidden = true, cwd = '~/.dotfiles/'}, default_options)<cr>", default_options)
 map("n", "<leader>fw",         "<cmd>Telescope vimwiki<cr>",                                                                                   default_options)
-map("n", "<leader>r",          ",<cmd>relativenumber!<cr",                                                                                     default_options)
+map("n", "<leader>r",          ",<cmd>relativenumber!<cr>",                                                                                     default_options)
+map("n", "<leader>sw",          ",<cmd>StripWhitespace<cr>",                                                                                     default_options)

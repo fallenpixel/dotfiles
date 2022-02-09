@@ -37,7 +37,8 @@ vim.g.floaterm_keymap_next                = '<F2>'
 vim.g.floaterm_keymap_prev                = '<F3>'
 vim.g.floaterm_keymap_new                 = '<F4>'
 vim.g.vimwiki_list = {{path='$HOME/.vimwiki', syntax='markdown', ext='.md'}}
-vim.g.vimwiki_global_ext=0
+vim.g.vimwiki_global_ext = 0
+vim.g.vimwiki_foldering = 'custom'
 vim.g.gruvbox_flat_style = "hard"
 vim.cmd("colorscheme gruvbox-flat")
 vim.g.airline_theme="base16_gruvbox_dark_hard"
