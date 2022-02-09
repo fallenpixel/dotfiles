@@ -3,6 +3,7 @@
 -- | '_ \ / _ \/ _ \ \ / / | '_ ` _ \
 -- | | | |  __/ (_) \ V /| | | | | | |
 -- |_| |_|\___|\___/ \_/ |_|_| |_| |_|
-require('options')
 require('plugins')
+require('options')
 require('mappings')
+require('lspconf')

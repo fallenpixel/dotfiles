@@ -31,3 +31,39 @@ vim.g.ansible_unindent_after_newline   = 1
 vim.g.ansible_extra_keywords_highlight = 1
 vim.g.compatible                       = true
 vim.g.spelllang                        = "en"
+vim.g.indent_guides_enable_on_vim_startup = 1
+vim.g.floaterm_keymap_toggle = '<F1>'
+vim.g.floaterm_keymap_next   = '<F2>'
+vim.g.floaterm_keymap_prev   = '<F3>'
+vim.g.floaterm_keymap_new    = '<F4>'
+local dial = require('dial')
+dial.augends["custom#boolean"] = dial.common.enum_cyclic{
+    name = "boolean",
+    strlist = {"true", "false"},
+}
+dial.augends["custom#yesno"] = dial.common.enum_cyclic{
+    name = "yesno",
+    strlist = {"yes", "no"},
+}
+dial.config.searchlist.normal = {
+  "number#decimal",
+  "number#decimal#int",
+  "number#decimal#fixed#zero",
+  "number#decimal#fixed#space",
+  "number#hex",
+  "number#binary",
+  "date#[%Y/%m/%d]",
+  "date#[%-m/%-d]",
+  "date#[%Y-%m-%d]",
+  "date#[%H:%M]",
+  "color#hex",
+  "markup#markdown#header",
+  "custom#boolean",
+  "custom#yesno"
+}
+vim.g.vimwiki_list = {{path='$HOME/.vimwiki', syntax='markdown', ext='.md'}}
+vim.g.vimwiki_global_ext=0
+vim.g.gruvbox_flat_style = "hard"
+vim.cmd("colorscheme gruvbox-flat")
+vim.g.airline_theme="base16_gruvbox_dark_hard"
+vim.g.airline_powerline_fonts = 1
