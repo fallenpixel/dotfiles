@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use {
-  	'eddyekofo94/gruvbox-flat.nvim',
+    'luisiacc/gruvbox-baby',
   	requires= {'ryanoasis/vim-devicons'}
   }
 if packer_bootstrap then
