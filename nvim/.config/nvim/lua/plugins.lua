@@ -1,6 +1,5 @@
 local fn = vim.fn
-local install_path = fn.stdpath("data") .. ""
-local default_options = {noremap = true, silent = true}
+local install_path = fn.stdpath("data") .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
@@ -27,22 +26,20 @@ return require('packer').startup(function(use)
   use 'monaqa/dial.nvim'
   use 'christoomey/vim-tmux-navigator'
   use 'vimwiki/vimwiki'
-  use {
-    'blackCauldron7/surround.nvim',
-    require"surround".setup {
-      context_offset = 100,
-      load_autogroups = false,
-      mappings_style = "surround",
-      map_insert_mode = true,
-      quotes = {"'", '"'},
-      brackets = {"(", '{', '['},
-      space_on_closing_char = false,
-      pairs = {
-        nestable = { b = { "(", ")" }, s = { "[", "]" }, B = { "{", "}" }, a = { "<", ">" } },
-        linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' }, j = { '"{{ ', ' }}"' }, l = { '[', ']()'}, L = { '[](', ')' } }
-      },
-      prefix = "s"
-    }
+  use 'blackCauldron7/surround.nvim'
+  require"surround".setup {
+    context_offset = 100,
+    load_autogroups = false,
+    mappings_style = "surround",
+    map_insert_mode = true,
+    quotes = {"'", '"'},
+    brackets = {"(", '{', '['},
+    space_on_closing_char = false,
+    pairs = {
+      nestable = { b = { "(", ")" }, s = { "[", "]" }, B = { "{", "}" }, a = { "<", ">" } },
+      linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' }, j = { '"{{ ', ' }}"' }, l = { '[', ']()'}, L = { '[](', ')' } }
+    },
+    prefix = "s"
   }
   use {
     'nvim-treesitter/nvim-treesitter',
