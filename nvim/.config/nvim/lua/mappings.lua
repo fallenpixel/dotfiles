@@ -53,3 +53,4 @@ map("n", "<leader>fw",         "<cmd>Telescope vimwiki<cr>",                    
 map("n", "<leader>r",          "<cmd>set number! relativenumber!<cr>",                                                                                     default_options)
 map("n", "<leader>sw",         "<cmd>StripWhitespace<cr>",                                                                                     default_options)
 map("n", "<leader>ml",         "<cmd>set ft=ansible.yaml ts=2 et<cr>ggO# vim:ft=ansible.yaml ts=2 et<esc><C-o>",                                    default_options)
+map("n", "<leader>d",         "<cmd>lua vim.diagnostic.open_float()<cr>",                                    default_options)

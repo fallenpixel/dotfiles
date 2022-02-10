@@ -87,9 +87,15 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
   signs = true,
   underline = true,
+  float = {
+    show_header = true,
+    source = 'if_many',
+    border = 'rounded',
+    focusable = false,
+  },
   update_in_insert = false,
   severity_sort = false,
 })
