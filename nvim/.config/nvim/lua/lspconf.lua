@@ -1,5 +1,6 @@
 local luasnip = require 'luasnip'
 vim.opt.completeopt = {'menu', 'menuone' , 'noselect'}
+local lspkind = require('lspkind')
 local cmp = require 'cmp'
 cmp.setup {
   snippet = {
@@ -57,13 +58,16 @@ cmp.setup {
     { name = 'path' },
     { name = 'cmdline' }
   },
-  documentation = {
-  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
   experimental = {
     ghost_text = true,
     native_menu = false,
   },
+  formatting = {
+  format = lspkind.cmp_format({
+    mode = 'symbol', -- show only symbol annotations
+    maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+  })
+}
 }
 cmp.setup.cmdline(':', {
   sources = cmp.config.sources({

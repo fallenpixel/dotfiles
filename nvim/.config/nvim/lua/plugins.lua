@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
   use 'nathanaelkane/vim-indent-guides'
   use 'scrooloose/nerdtree'
   use 'neovim/nvim-lspconfig'
+  use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
