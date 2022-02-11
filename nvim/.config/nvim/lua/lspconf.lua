@@ -58,7 +58,7 @@ cmp.setup {
     { name = 'cmdline' }
   },
   documentation = {
-  	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   experimental = {
     ghost_text = true,

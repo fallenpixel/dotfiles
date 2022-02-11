@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline-themes'
   use {
     'luisiacc/gruvbox-baby',
-  	requires= {'ryanoasis/vim-devicons'}
+    requires= {'ryanoasis/vim-devicons'}
   }
 if packer_bootstrap then
   require('packer').sync()
