@@ -15,6 +15,7 @@ map("n", "<C-t>k",             ":tabp<cr>",                                     
 map("n", "<C-t>t",             ":tabnew<cr>",                                                                                                  default_options)
 map("n", "<leader>r",          ":lua vim.lsp.buf.formatting_sync(nil,100)<cr>",                                                                default_options)
 map("n", "<leader>ss",         ":set spell!<cr>",                                                                                              default_options)
+map("n", "<leader>sd",         "a<C-X>s",                                                                                                 default_options)
 map('n', 'ga',                 '<Plug>(EasyAlign)',                                                                                            {silent = true, noremap = false})
 map('x', 'ga',                 '<Plug>(EasyAlign)',                                                                                            {silent = true, noremap = false})
 map('n', '<leader>w',          '<cmd>TagbarToggle<cr>',                                                                                        default_options)

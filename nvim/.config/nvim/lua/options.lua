@@ -31,6 +31,7 @@ vim.g.ansible_unindent_after_newline      = 1
 vim.g.ansible_extra_keywords_highlight    = 1
 vim.g.compatible                          = true
 vim.g.spelllang                           = "en"
+vim.g.spellsuggest                        = "best,9"
 vim.g.indent_guides_enable_on_vim_startup = 1
 vim.g.floaterm_keymap_toggle              = '<F1>'
 vim.g.floaterm_keymap_next                = '<F2>'
