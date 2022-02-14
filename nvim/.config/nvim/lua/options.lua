@@ -42,6 +42,7 @@ vim.g.vimwiki_global_ext = 0
 vim.g.vimwiki_foldering = 'custom'
 vim.g.gruvbox_baby_background_color = "dark"
 vim.cmd("colorscheme gruvbox-baby")
+vim.g.gruvbox_baby_telescope_theme = 1
 vim.g.airline_theme="base16_gruvbox_dark_hard"
 vim.g.airline_powerline_fonts = 1
 local dial = require('dial')
