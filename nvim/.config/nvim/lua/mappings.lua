@@ -65,7 +65,7 @@ map('n', '<leader>hS',         "<cmd>Gitsigns stage_buffer<cr>",                
 map('n', '<leader>hu',         "<cmd>Gitsigns undo_stage_hunk<cr>",                                                                            default_options)
 map('n', '<leader>hR',         "<cmd>Gitsigns reset_buffer<cr>",                                                                               default_options)
 map('n', '<leader>hp',         "<cmd>Gitsigns preview_hunk<cr>",                                                                               default_options)
-map('n', '<leader>hb',         "<cmd>Gitsigns toggle_blame_line<cr>",                                                                          default_options)
+map('n', '<leader>hb',         "<cmd>Gitsigns blame_line<cr>",                                                                          default_options)
 map('n', '<leader>hd',         "<cmd>Gitsigns diffthis<cr>",                                                                                   default_options)
 map('n', "<leader>hn",         "<cmd>Gitsigns next_hunk<cr>",                                                                                  default_options)
 map('n', "<leader>hp",         "<cmd>Gitsigns prev_hunk<cr>",                                                                                  default_options)
