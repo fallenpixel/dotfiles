@@ -1,11 +1,23 @@
-local luasnip = require 'luasnip'
+local luasnip_status, luasnip = pcall(require, 'luasnip')
+if not luasnip_status then
+  print("Luasnip failed to load")
+  return
+end
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 vim.opt.completeopt = {'menu', 'menuone' , 'noselect'}
-local lspkind = require('lspkind')
-local cmp = require 'cmp'
+local lspkind_status, lspkind = pcall(require, 'lspkind')
+if not lspkind_status then
+  print("lspkind failed to load")
+  return
+end
+local cmp_status, cmp = pcall(require, 'cmp')
+if not cmp_status then
+  print("cmp_status")
+  return
+end
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -18,13 +30,10 @@ cmp.setup {
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
-    -- Accept currently selected item. If none selected, `select` first item.
-    -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -73,7 +82,11 @@ cmp.setup.cmdline(':', {
   })
 })
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-local lspconfig = require('lspconfig')
+local lspconfig_status, lspconfig  = pcall(require, 'lspconfig')
+if not lspconfig_status then
+  print("lspconfig failed to load")
+  return
+end
 local servers = { 'texlab', 'tflint', 'bashls', 'jedi_language_server', 'ansiblels', 'sumneko_lua'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -90,7 +103,7 @@ for _, lsp in ipairs(servers) do
           -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
           version = 'LuaJIT',
           -- Setup your lua path
-          path = runtime_path,
+          path = '/usr/bin/luajit',
         },
         diagnostics = {
           -- Get the language server to recognize the `vim` global

@@ -3,7 +3,7 @@ local install_path = fn.stdpath("data") .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
   use 'mhinz/vim-signify'
   use 'tpope/vim-fugitive'
@@ -25,12 +25,63 @@ return require('packer').startup(function(use)
   use 'wellle/targets.vim'
   use 'voldikss/vim-floaterm'
   use 'ntpeters/vim-better-whitespace'
-  use 'numToStr/Comment.nvim'
-  require('Comment').setup()
-  use 'monaqa/dial.nvim'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+  use {'monaqa/dial.nvim',
+    config = {
+      function()
+        local dial = require('dial')
+        dial.augends["custom#boolean"] = dial.common.enum_cyclic{
+        name = "boolean",
+        strlist = {"true", "false"},
+        }
+        dial.augends["custom#upperboolean"] = dial.common.enum_cyclic{
+        name = "upperboolean",
+        strlist = {"True", "False"},
+        }
+        dial.augends["custom#yesno"] = dial.common.enum_cyclic{
+        name = "yesno",
+        strlist = {"yes", "no"},
+        }
+        dial.augends["custom#check"] = dial.common.enum_cyclic{
+        name = "check",
+        strlist = {"[ ]", "[x]"},
+        }
+        dial.config.searchlist.normal = {
+          "number#decimal",
+          "number#decimal#int",
+          "number#decimal#fixed#zero",
+          "number#decimal#fixed#space",
+          "number#hex",
+          "number#binary",
+          "date#[%Y/%m/%d]",
+          "date#[%-m/%-d]",
+          "date#[%Y-%m-%d]",
+          "date#[%H:%M]",
+          "color#hex",
+          "markup#markdown#header",
+          "custom#boolean",
+          "custom#upperboolean",
+          "custom#yesno",
+          "custom#check"
+        }
+      end
+    }
+  }
   use 'christoomey/vim-tmux-navigator'
-  use 'vimwiki/vimwiki'
-  use 'blackCauldron7/surround.nvim'
+  use {'vimwiki/vimwiki',
+  config = function ()
+    vim.g.vimwiki_list = {{path='$HOME/.vimwiki', syntax='markdown', ext='.md'}}
+    vim.g.vimwiki_global_ext = 0
+    vim.g.vimwiki_foldering = 'custom'
+  end
+  }
+  use {'blackCauldron7/surround.nvim',
+  config = function()
   require"surround".setup {
     context_offset = 100,
     load_autogroups = false,
@@ -45,9 +96,20 @@ return require('packer').startup(function(use)
     },
     prefix = "s"
   }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+end
+}
+  use { 'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+    require'nvim-treesitter.configs'.setup {
+      ensure_installed = "maintained",
+      sync_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = true,
+      },
+  }
+  end
   }
   use {
     'nvim-telescope/telescope.nvim',
@@ -59,13 +121,27 @@ return require('packer').startup(function(use)
   }
   require('telescope').load_extension('fzf')
   require('telescope').load_extension('vimwiki')
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons' },
+  config = function()
+    require('lualine').setup{
+    options = { theme = "auto" }
+    }
+  end
+  }
   use {
     'luisiacc/gruvbox-baby',
-    requires= {'ryanoasis/vim-devicons'}
+    requires= {'ryanoasis/vim-devicons'},
+    config = function ()
+      vim.g.gruvbox_baby_background_color = "dark"
+      vim.cmd("colorscheme gruvbox-baby")
+      vim.g.gruvbox_baby_telescope_theme = 1
+    end
   }
-if packer_bootstrap then
-  require('packer').sync()
-end
-end)
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end,
+config = { display = { open_fn = require('packer.util').float,}}
+})

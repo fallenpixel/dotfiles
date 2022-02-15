@@ -37,57 +37,6 @@ vim.g.floaterm_keymap_toggle              = '<F1>'
 vim.g.floaterm_keymap_next                = '<F2>'
 vim.g.floaterm_keymap_prev                = '<F3>'
 vim.g.floaterm_keymap_new                 = '<F4>'
-vim.g.vimwiki_list = {{path='$HOME/.vimwiki', syntax='markdown', ext='.md'}}
-vim.g.vimwiki_global_ext = 0
-vim.g.vimwiki_foldering = 'custom'
-vim.g.gruvbox_baby_background_color = "dark"
-vim.cmd("colorscheme gruvbox-baby")
-vim.g.gruvbox_baby_telescope_theme = 1
-vim.g.airline_theme="base16_gruvbox_dark_hard"
-vim.g.airline_powerline_fonts = 1
-local dial = require('dial')
-dial.augends["custom#boolean"] = dial.common.enum_cyclic{
-    name = "boolean",
-    strlist = {"true", "false"},
-}
-dial.augends["custom#upperboolean"] = dial.common.enum_cyclic{
-    name = "upperboolean",
-    strlist = {"True", "False"},
-}
-dial.augends["custom#yesno"] = dial.common.enum_cyclic{
-    name = "yesno",
-    strlist = {"yes", "no"},
-}
-dial.augends["custom#check"] = dial.common.enum_cyclic{
-    name = "check",
-    strlist = {"[ ]", "[x]"},
-}
-dial.config.searchlist.normal = {
-  "number#decimal",
-  "number#decimal#int",
-  "number#decimal#fixed#zero",
-  "number#decimal#fixed#space",
-  "number#hex",
-  "number#binary",
-  "date#[%Y/%m/%d]",
-  "date#[%-m/%-d]",
-  "date#[%Y-%m-%d]",
-  "date#[%H:%M]",
-  "color#hex",
-  "markup#markdown#header",
-  "custom#boolean",
-  "custom#upperboolean",
-  "custom#yesno",
-  "custom#check"
-}
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  sync_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = true,
-  },
-}
 vim.diagnostic.config({
   virtual_text = false,
   signs = true,

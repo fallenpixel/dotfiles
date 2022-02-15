@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local default_options = {noremap = true, silent = true}
-local remap_options = {noremap = false, silent = true}
+local remap_options = {noremap = false,  silent = true}
 -- local expr_options = {noremap = true, expr = true, silent = true}
 
 map("n", "<leader>vr",         ":source ~/.config/nvim/init.lua<cr>",                                                                          default_options)
@@ -15,7 +15,7 @@ map("n", "<C-t>k",             ":tabp<cr>",                                     
 map("n", "<C-t>t",             ":tabnew<cr>",                                                                                                  default_options)
 map("n", "<leader>r",          ":lua vim.lsp.buf.formatting_sync(nil,100)<cr>",                                                                default_options)
 map("n", "<leader>ss",         ":set spell!<cr>",                                                                                              default_options)
-map("n", "<leader>sd",         "a<C-X>s",                                                                                                 default_options)
+map("n", "<leader>sd",         "a<C-X>s",                                                                                                      default_options)
 map('n', 'ga',                 '<Plug>(EasyAlign)',                                                                                            {silent = true, noremap = false})
 map('x', 'ga',                 '<Plug>(EasyAlign)',                                                                                            {silent = true, noremap = false})
 map('n', '<leader>w',          '<cmd>TagbarToggle<cr>',                                                                                        default_options)
@@ -51,11 +51,11 @@ map("n", "<leader>fb",         "<cmd>lua require('telescope.builtin').buffers()<
 map("n", "<leader>fh",         "<cmd>lua require('telescope.builtin').help_tags()<cr>",                                                        default_options)
 map("n", "<leader>fd",         "<cmd>lua require('telescope.builtin').git_files({ hidden = true, cwd = '~/.dotfiles/'}, default_options)<cr>", default_options)
 map("n", "<leader>fw",         "<cmd>Telescope vimwiki<cr>",                                                                                   default_options)
-map("n", "<leader>r",          "<cmd>set number! relativenumber!<cr>",                                                                                     default_options)
+map("n", "<leader>r",          "<cmd>set number! relativenumber!<cr>",                                                                         default_options)
 map("n", "<leader>sw",         "<cmd>StripWhitespace<cr>",                                                                                     default_options)
-map("n", "<leader>ml",         "<cmd>set ft=ansible.yaml ts=2 et<cr>ggO# vim:ft=ansible.yaml ts=2 et<esc><C-o>",                                    default_options)
-map("n", "<leader>d",         "<cmd>lua vim.diagnostic.open_float()<cr>",                                    default_options)
-map("n", "<leader>h",         "<cmd>vertical resize -10<cr>",                                    default_options)
-map("n", "<leader>l",         "<cmd>vertical resize +10<cr>",                                    default_options)
-map("n", "<leader>j",         "<cmd>vertical resize -10<cr>",                                    default_options)
-map("n", "<leader>k",         "<cmd>vertical resize +10<cr>",                                    default_options)
+map("n", "<leader>ml",         "<cmd>set ft=ansible.yaml ts=2 et<cr>ggO# vim:ft=ansible.yaml ts=2 et<esc><C-o>",                               default_options)
+map("n", "<leader>d",          "<cmd>lua vim.diagnostic.open_float()<cr>",                                                                     default_options)
+map("n", "<leader>h",          "<cmd>vertical resize -10<cr>",                                                                                 default_options)
+map("n", "<leader>l",          "<cmd>vertical resize +10<cr>",                                                                                 default_options)
+map("n", "<leader>j",          "<cmd>vertical resize -10<cr>",                                                                                 default_options)
+map("n", "<leader>k",          "<cmd>vertical resize +10<cr>",                                                                                 default_options)

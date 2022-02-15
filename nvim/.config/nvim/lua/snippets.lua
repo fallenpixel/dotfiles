@@ -1,18 +1,28 @@
-local ls = require('luasnip')
-local extra = require('luasnip.extras')
-local fmt = require('luasnip.extras.fmt').fmt
-local snip = ls.snippet
-local node = ls.snippet_node
-local text = ls.text_node
-local insert = ls.insert_node
-local func = ls.function_node
-local lambda = extra.lambda
-local choice = ls.choice_node
-local dynamic = ls.dynamic_node
-
-ls.snippets = {
-  ansible = {
-    snip("lookup-local", fmt("\"{{{{ lookup(\'env\', \'{}\' }}}}\"", { insert(1,"HOME") })),
-    snip("lookup-remote", fmt("\"{{{{ ansible_env.{} }}}}\"", { insert(1,"HOME") }))
+local luasnip_status, luasnip = pcall(require, 'luasnip')
+local lsextras_status, extras = pcall(require, 'luasnip.extras')
+local lsfmt_status, format = pcall(require, 'luasnip.extras.fmt')
+if not (luasnip_status and lsextras_status and lsfmt_status) then
+  print("failed")
+  return
+else
+  local snip = luasnip.snippet
+  local node = luasnip.snippet_node
+  local text = luasnip.text_node
+  local insert = luasnip.insert_node
+  local func = luasnip.function_node
+  local lambda = extras.lambda
+  local choice = luasnip.choice_node
+  local dynamic = luasnip.dynamic_node
+  local fmt = format.fmt
+  local rep = extras.rep
+  luasnip.snippets = {
+    ansible = {
+      snip("lookup-local", fmt("\"{{{{ lookup(\'env\', \'{}\' }}}}\"", { insert(1,"HOME") })),
+      snip("lookup-remote", fmt("\"{{{{ ansible_env.{} }}}}\"", { insert(1,"HOME") }))
+    },
+    lua = {
+      snip("pcall", fmt("local module_status_ok, {} = pcall(require, '{}')\nif not module_status_ok then\n\treturn\nend",
+     {insert(1), rep(1)})),
+    }
   }
-}
+end
