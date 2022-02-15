@@ -21,8 +21,8 @@ else
       snip("lookup-remote", fmt("\"{{{{ ansible_env.{} }}}}\"", { insert(1,"HOME") }))
     },
     lua = {
-      snip("pcall", fmt("local module_status_ok, {} = pcall(require, '{}')\nif not module_status_ok then\n\treturn\nend",
-     {insert(1), rep(1)})),
+      snip("pcall", fmt("local {}_status, {} = pcall(require, '{}')\nif {}{}_status then\n\treturn\nend",
+     { rep(1), insert(1), rep(1), choice(2, {text(" "), text("not ")}), rep(1)})),
     }
   }
 end

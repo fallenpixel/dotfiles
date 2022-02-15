@@ -1,12 +1,19 @@
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  Packer_Bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
-  use 'mhinz/vim-signify'
-  use 'tpope/vim-fugitive'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   use 'junegunn/vim-easy-align'
   use 'preservim/tagbar'
   use 'nathanaelkane/vim-indent-guides'
@@ -146,7 +153,42 @@ end
       require("bufferline").setup()
     end
   }
-  if packer_bootstrap then
+  use {
+    "windwp/nvim-autopairs",
+    requires = {
+      'hrsh7th/nvim-cmp',
+      'nvim-treesitter/nvim-treesitter'
+    },
+    config = function()
+      require("nvim-autopairs").setup{
+        check_ts = true,
+        ts_config = {
+          lua = { "string", "source" },
+          javascript = { "string", "template_string" },
+          java = false,
+        },
+        disable_filetype = { "TelescopePrompt", "spectre_panel" },
+        fast_wrap = {
+          map = "<M-e>",
+          chars = { "{", "[", "(", '"', "'" },
+          pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
+          offset = 0, -- Offset from pattern match
+          end_key = "$",
+          keys = "qwertyuiopzxcvbnmasdfghjkl",
+          check_comma = true,
+          highlight = "PmenuSel",
+          highlight_grey = "LineNr",
+        },
+    }
+      local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+      local cmp_status_ok, cmp = pcall(require, "cmp")
+        if not cmp_status_ok then
+      return
+      end
+      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
+    end
+  }
+  if Packer_Bootstrap then
     require('packer').sync()
   end
 end,
