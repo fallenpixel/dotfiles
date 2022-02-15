@@ -1,4 +1,5 @@
 vim.cmd('filetype plugin indent on')
+vim.g.clipboard = "namedplus"
 vim.g.mapleader                           = ","
 vim.g.localleader                         = ","
 vim.opt.showbreak                         = "↪"

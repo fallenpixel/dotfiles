@@ -59,3 +59,4 @@ map("n", "<leader>h",          "<cmd>vertical resize -10<cr>",                  
 map("n", "<leader>l",          "<cmd>vertical resize +10<cr>",                                                                                 default_options)
 map("n", "<leader>j",          "<cmd>vertical resize -10<cr>",                                                                                 default_options)
 map("n", "<leader>k",          "<cmd>vertical resize +10<cr>",                                                                                 default_options)
+map("n", "<leader>b",          "<cmd>BufferLinePick<cr>",                                                                                      default_options)

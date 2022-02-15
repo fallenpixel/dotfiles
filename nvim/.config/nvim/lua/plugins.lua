@@ -139,6 +139,13 @@ end
       vim.g.gruvbox_baby_telescope_theme = 1
     end
   }
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup()
+    end
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
