@@ -127,10 +127,13 @@ end
       'nvim-lua/plenary.nvim',
       'nvim-lua/popup.nvim',
       'ElPiloto/telescope-vimwiki.nvim',
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'} }
+      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+    config = function()
+      require('telescope').load_extension('fzf')
+      require('telescope').load_extension('vimwiki')
+    end
+    }
   }
-  require('telescope').load_extension('fzf')
-  require('telescope').load_extension('vimwiki')
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons' },
