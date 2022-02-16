@@ -6,7 +6,7 @@
 
 # Use Antigen {{{
 
-source $HOME/.dotfiles/antigen/antigen.zsh
+source "$HOME/.dotfiles/antigen/antigen.zsh"
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle docker
@@ -37,10 +37,10 @@ fi
 if [[ -d ~/.local/bin ]]; then
   export PATH=$PATH:~/.local/bin
 fi
-if [[ -e /usr/bin/bat ]] then
+if [[ -e /usr/bin/bat ]]; then
   alias cat='bat'
 fi
-if [[ -e /usr/bin/lsd ]] then
+if [[ -e /usr/bin/lsd ]]; then
   alias ls='lsd'
 else
   alias ls='ls --color=auto'
@@ -71,16 +71,14 @@ zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-function foreground-nvim(){fg %nvim}
-zle -N foreground-nvim
-bindkey -M vicmd z foreground-nvim
 # }}}
 # Bookmarks {{{
 hash -d -- dotfiles=$HOME/.dotfiles/
 hash -d -- git=$HOME/git/
 # }}}
 # Final Sourcing {{{
-source ~/.p10k.zsh
+#disable
+source "$HOME/.p10k.zsh"
 autoload -Uz compinit
 compinit
 antigen apply

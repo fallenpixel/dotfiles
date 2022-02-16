@@ -23,6 +23,8 @@ else
     lua = {
       snip("pcall", fmt("local {}_status, {} = pcall(require, '{}')\nif {}{}_status then\n\treturn\nend",
      { rep(1), insert(1), rep(1), choice(2, {text(" "), text("not ")}), rep(1)})),
+      snip("use", fmt("use {{\n\t'{}',\n\tconfig = {{\n\t\tfunction()\n\t\tlocal {} = require('{}').setup{{\n\t\t\t{}\n\t\t}}\n\t}}\n}}",
+      {insert(1), insert(2), rep(2), insert(3)}))
     }
   }
 end

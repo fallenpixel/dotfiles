@@ -59,7 +59,7 @@ cmp.setup {
   sources = {
     { name = 'luasnip' },
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
+    -- { name = 'buffer' },
     { name = 'path' },
     { name = 'cmdline' }
   },

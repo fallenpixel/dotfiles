@@ -1,7 +1,8 @@
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  Packer_Bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  Packer_Bootstrap = fn.system({'git', 'clone', '--depth', '1', 
+    'https://github.com/wbthomason/packer.nvim', install_path})
 end
 return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
@@ -188,6 +189,26 @@ end
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
     end
   }
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("null-ls").setup({
+        sources = {
+          require("null-ls").builtins.diagnostics.ansiblelint,
+          require("null-ls").builtins.diagnostics.luacheck,
+          require("null-ls").builtins.diagnostics.markdownlint,
+          -- require("null-ls").builtins.diagnostics.shellcheck, -- way too noisy
+          require("null-ls").builtins.diagnostics.zsh,
+          require("null-ls").builtins.formatting.markdownlint,
+          require("null-ls").builtins.formatting.markdownlint,
+          require("null-ls").builtins.formatting.terraform_fmt,
+          require("null-ls").builtins.formatting.trim_newlines,
+          require("null-ls").builtins.formatting.trim_whitespace
+        },
+      })
+    end
+  }
+  use {"ellisonleao/glow.nvim"}
   if Packer_Bootstrap then
     require('packer').sync()
   end
