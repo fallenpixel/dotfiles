@@ -58,6 +58,7 @@ return require('packer').startup({function(use)
         dial.augends["custom#check"] = dial.common.enum_cyclic{
         name = "check",
         strlist = {"[ ]", "[x]"},
+        ptn_format = [[\C\V\(%s\)]],
         }
         dial.config.searchlist.normal = {
           "number#decimal",
