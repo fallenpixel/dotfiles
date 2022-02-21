@@ -42,41 +42,30 @@ return require('packer').startup({function(use)
   use {'monaqa/dial.nvim',
     config = {
       function()
-        local dial = require('dial')
-        dial.augends["custom#boolean"] = dial.common.enum_cyclic{
-        name = "boolean",
-        strlist = {"true", "false"},
-        }
-        dial.augends["custom#upperboolean"] = dial.common.enum_cyclic{
-        name = "upperboolean",
-        strlist = {"True", "False"},
-        }
-        dial.augends["custom#yesno"] = dial.common.enum_cyclic{
-        name = "yesno",
-        strlist = {"yes", "no"},
-        }
-        dial.augends["custom#check"] = dial.common.enum_cyclic{
-        name = "check",
-        strlist = {"[ ]", "[x]"},
-        ptn_format = [[\C\V\(%s\)]],
-        }
-        dial.config.searchlist.normal = {
-          "number#decimal",
-          "number#decimal#int",
-          "number#decimal#fixed#zero",
-          "number#decimal#fixed#space",
-          "number#hex",
-          "number#binary",
-          "date#[%Y/%m/%d]",
-          "date#[%-m/%-d]",
-          "date#[%Y-%m-%d]",
-          "date#[%H:%M]",
-          "color#hex",
-          "markup#markdown#header",
-          "custom#boolean",
-          "custom#upperboolean",
-          "custom#yesno",
-          "custom#check"
+        local dial = require('dial.config')
+        local augend = require('dial.augend')
+        dial.augends:register_group{
+          default = {
+            augend.integer.alias.decimal,
+            augend.integer.alias.hex,
+            augend.date.alias["%m/%d/%Y"],
+            augend.constant.alias.bool,
+            augend.constant.new{
+              elements = { "yes", "no" },
+              word = true,
+              cyclic = true
+            },
+            augend.constant.new{
+              elements = { "Yes", "No" },
+              word = true,
+              cyclic = true
+            },
+            augend.constant.new{
+              elements = {"[ ]", "[x]"},
+              word = false,
+              cyclic = true
+            }
+          }
         }
       end
     }
