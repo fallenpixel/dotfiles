@@ -1,5 +1,7 @@
 vim.cmd('filetype plugin indent on')
-vim.g.clipboard = "namedplus"
+vim.g.clipboard                           = "namedplus"
+vim.o.background                          = "dark"
+vim.opt.termguicolors                     = true
 vim.g.mapleader                           = ","
 vim.g.localleader                         = ","
 vim.opt.showbreak                         = "↪"
@@ -39,15 +41,15 @@ vim.g.floaterm_keymap_next                = '<F2>'
 vim.g.floaterm_keymap_prev                = '<F3>'
 vim.g.floaterm_keymap_new                 = '<F4>'
 vim.diagnostic.config({
-  virtual_text = false,
-  signs = true,
-  underline = true,
-  float = {
-    show_header = true,
-    source = 'if_many',
-    border = 'rounded',
-    focusable = false,
+  virtual_text                            = false,
+  signs                                   = true,
+  underline                               = true,
+  float                                   = {
+    show_header                           = true,
+    source                                = 'if_many',
+    border                                = 'rounded',
+    focusable                             = false,
   },
-  update_in_insert = false,
-  severity_sort = false,
+  update_in_insert                        = false,
+  severity_sort                           = false,
 })

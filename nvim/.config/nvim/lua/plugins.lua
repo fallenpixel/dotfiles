@@ -123,6 +123,14 @@ end
     end
   }
   use {
+    'ellisonleao/gruvbox.nvim',
+    requires= {'ryanoasis/vim-devicons'},
+    config = function ()
+      vim.o.background = "dark"
+      vim.cmd("colorscheme gruvbox")
+    end
+  }
+  use {
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
@@ -130,6 +138,7 @@ end
       'ElPiloto/telescope-vimwiki.nvim',
       {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
     config = function()
+      require('telescope').setup()
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('vimwiki')
     end
@@ -140,18 +149,9 @@ end
   requires = { 'kyazdani42/nvim-web-devicons' },
   config = function()
     require('lualine').setup{
-    options = { theme = "auto" }
+      options = { theme = "auto" }
     }
   end
-  }
-  use {
-    'luisiacc/gruvbox-baby',
-    requires= {'ryanoasis/vim-devicons'},
-    config = function ()
-      vim.g.gruvbox_baby_background_color = "dark"
-      vim.cmd("colorscheme gruvbox-baby")
-      vim.g.gruvbox_baby_telescope_theme = 1
-    end
   }
   use {
     'akinsho/bufferline.nvim',
