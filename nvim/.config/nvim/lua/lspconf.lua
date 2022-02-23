@@ -1,6 +1,6 @@
 local luasnip_status, luasnip = pcall(require, 'luasnip')
 if not luasnip_status then
-  print("Luasnip failed to load")
+  vim.notify("luasnip failed to load", "error")
   return
 end
 local has_words_before = function()
@@ -10,12 +10,12 @@ end
 vim.opt.completeopt = {'menu', 'menuone' , 'noselect'}
 local lspkind_status, lspkind = pcall(require, 'lspkind')
 if not lspkind_status then
-  print("lspkind failed to load")
+  vim.notify("lspkind failed to load", error)
   return
 end
 local cmp_status, cmp = pcall(require, 'cmp')
 if not cmp_status then
-  print("cmp_status")
+  vim.notify("cmp failed to load", error)
   return
 end
 cmp.setup {
@@ -84,7 +84,7 @@ cmp.setup.cmdline(':', {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lspconfig_status, lspconfig  = pcall(require, 'lspconfig')
 if not lspconfig_status then
-  print("lspconfig failed to load")
+  vim.notify("lspconfig failed to load", "error")
   return
 end
 local servers = { 'texlab', 'tflint', 'bashls', 'jedi_language_server', 'ansiblels', 'sumneko_lua'}

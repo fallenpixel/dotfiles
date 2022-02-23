@@ -6,6 +6,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
+  use {'rcarriga/nvim-notify',
+    config = function()
+      vim.notify = require("notify")
+    end
+  }
   use {
     'lewis6991/gitsigns.nvim',
     requires = {
