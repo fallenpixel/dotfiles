@@ -125,7 +125,7 @@ for _, lsp in ipairs(servers) do
     }
   }
 local groovy_paths = {'/usr/share/java/groovy-language-server/groovy-language-server.jar',
-  '/usr/share/local/java/groovy-language-server/groovy-language-server.jar'}
+  '/usr/local/share/java/groovy-language-server/groovy-language-server.jar'}
 for _, groovy_ls in ipairs(groovy_paths) do
   if file_exists(groovy_ls) then
     require'lspconfig'.groovyls.setup{
