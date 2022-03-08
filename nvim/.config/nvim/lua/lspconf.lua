@@ -1,3 +1,7 @@
+local function file_exists(name)
+    local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
 local luasnip_status, luasnip = pcall(require, 'luasnip')
 if not luasnip_status then
   vim.notify("luasnip failed to load", "error")
@@ -120,4 +124,14 @@ for _, lsp in ipairs(servers) do
       },
     }
   }
+local groovy_paths = {'/usr/share/java/groovy-language-server/groovy-language-server.jar',
+  '/usr/share/local/java/groovy-language-server/groovy-language-server.jar'}
+for _, groovy_ls in ipairs(groovy_paths) do
+  if file_exists(groovy_ls) then
+    require'lspconfig'.groovyls.setup{
+      cmd = { "java", "-jar", groovy_ls },
+    }
+    break
+  end
+end
 end
