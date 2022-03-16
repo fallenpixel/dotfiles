@@ -12,3 +12,7 @@ local module_status_ok, local_config = pcall(require, "local_config")
 if not module_status_ok then
   return
 end
+local test_status, test = pcall(require, 'test')
+if  test_status then
+  return
+end

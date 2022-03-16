@@ -75,7 +75,7 @@ return require('packer').startup({function(use)
       end
     }
   }
-  use 'christoomey/vim-tmux-navigator'
+  -- use 'christoomey/vim-tmux-navigator'
   use {'vimwiki/vimwiki',
   config = function ()
     vim.g.vimwiki_list = {{path='$HOME/.vimwiki', syntax='markdown', ext='.md'}}
