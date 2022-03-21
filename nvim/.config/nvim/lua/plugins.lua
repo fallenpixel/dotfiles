@@ -21,6 +21,7 @@ return require('packer').startup({function(use)
     end
   }
   use 'junegunn/vim-easy-align'
+  use 'sheerun/vim-polyglot'
   use 'preservim/tagbar'
   use 'nathanaelkane/vim-indent-guides'
   use 'scrooloose/nerdtree'
