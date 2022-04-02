@@ -91,7 +91,7 @@ if not lspconfig_status then
   vim.notify("lspconfig failed to load", "error")
   return
 end
-local servers = { 'texlab', 'terraformls', 'bashls', 'jedi_language_server', 'ansiblels', 'sumneko_lua'}
+local servers = { 'texlab', 'terraformls', 'bashls', 'jedi_language_server', 'ansiblels', 'yamlls', 'dockerls', 'sumneko_lua'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -122,7 +122,14 @@ for _, lsp in ipairs(servers) do
           enable = false,
         },
       },
+      yaml = {
+        schemas = {
+          ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "/.gitlab-ci.yml",
+          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+        },
+      }
     }
+
   }
 local groovy_paths = {'/usr/share/java/groovy-language-server/groovy-language-server.jar',
   '/usr/local/share/java/groovy-language-server/groovy-language-server.jar'}
