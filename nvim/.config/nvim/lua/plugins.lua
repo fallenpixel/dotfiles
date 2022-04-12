@@ -210,7 +210,7 @@ end
           require("null-ls").builtins.diagnostics.ansiblelint,
           require("null-ls").builtins.diagnostics.luacheck,
           require("null-ls").builtins.diagnostics.markdownlint,
-          -- require("null-ls").builtins.diagnostics.shellcheck, -- way too noisy
+          require("null-ls").builtins.diagnostics.shellcheck, -- way too noisy
           require("null-ls").builtins.diagnostics.zsh,
           require("null-ls").builtins.formatting.markdownlint,
           require("null-ls").builtins.formatting.markdownlint,
