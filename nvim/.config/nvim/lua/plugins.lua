@@ -213,7 +213,7 @@ end
           require("null-ls").builtins.diagnostics.shellcheck,
           require("null-ls").builtins.diagnostics.hadolint,
           require("null-ls").builtins.diagnostics.zsh,
-          require("null-s").builtins.formatting.markdownlint,
+          require("null-ls").builtins.formatting.markdownlint,
           require("null-ls").builtins.formatting.terraform_fmt,
           require("null-ls").builtins.formatting.trim_newlines,
           require("null-ls").builtins.formatting.trim_whitespace
