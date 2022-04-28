@@ -34,6 +34,13 @@ return require('packer').startup({function(use)
       vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>')
     end
   }
+  use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>gd', '<cmd>DiffviewOpen<CR>')
+    end
+  }
 
   use 'junegunn/vim-easy-align'
   use 'sheerun/vim-polyglot'
