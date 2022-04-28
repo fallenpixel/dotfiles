@@ -20,6 +20,21 @@ return require('packer').startup({function(use)
       require('gitsigns').setup()
     end
   }
+  use {
+    'f-person/git-blame.nvim',
+    config = function()
+      vim.g.gitblame_enabled = 0
+      vim.keymap.set('n', '<leader>gb', '<cmd>GitBlameToggle<CR>')
+    end
+  }
+  use {
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>')
+    end
+  }
+
   use 'junegunn/vim-easy-align'
   use 'sheerun/vim-polyglot'
   use 'preservim/tagbar'
