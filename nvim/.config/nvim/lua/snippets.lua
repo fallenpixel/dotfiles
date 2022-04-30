@@ -17,7 +17,7 @@ else
   local fmt = format.fmt
   local rep = extras.rep
 
-  luasnip.snippets = {
+  luasnip.add_snippets(nil, {
     ansible = {
       snip("lookup-local", fmt("\"{{{{ lookup(\'env\', \'{}\' }}}}\"", { insert(1,"HOME") })),
       snip("lookup-remote", fmt("\"{{{{ ansible_env.{} }}}}\"", { insert(1,"HOME") }))
@@ -26,4 +26,5 @@ else
       snip("test", fmt("foo {}", insert(1)))
     }
   }
+  )
 end

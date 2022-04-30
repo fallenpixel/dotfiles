@@ -20,6 +20,28 @@ return require('packer').startup({function(use)
       require('gitsigns').setup()
     end
   }
+  use {
+    'f-person/git-blame.nvim',
+    config = function()
+      vim.g.gitblame_enabled = 0
+      vim.keymap.set('n', '<leader>gb', '<cmd>GitBlameToggle<CR>')
+    end
+  }
+  use {
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>')
+    end
+  }
+  use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>gd', '<cmd>DiffviewOpen<CR>')
+    end
+  }
+
   use 'junegunn/vim-easy-align'
   use 'sheerun/vim-polyglot'
   use 'preservim/tagbar'
@@ -103,31 +125,31 @@ return require('packer').startup({function(use)
   }
 end
 }
-  use { 'nvim-treesitter/nvim-treesitter',
-     run = ':TSUpdate',
-     config = function()
-     require'nvim-treesitter.configs'.setup {
-       ensure_installed = "all",
-       sync_install = true,
-       highlight = {
-         enable = true,
-         additional_vim_regex_highlighting = true,
-       },
-       incremental_selection = {
-         enable = true,
-         keymaps = {
-           init_selection = "gnn",
-           node_incremental = "grn",
-           scope_incremental = "grc",
-           node_decremental = "grm",
-         },
-       },
-       indent = {
-         enable = true
-       }
-     }
-     end
-  }
+  -- use { 'nvim-treesitter/nvim-treesitter',
+  --    run = ':TSUpdate',
+  --    config = function()
+  --    require'nvim-treesitter.configs'.setup {
+  --      ensure_installed = "all",
+  --      sync_install = true,
+  --      highlight = {
+  --        enable = true,
+  --        additional_vim_regex_highlighting = true,
+  --      },
+  --      incremental_selection = {
+  --        enable = true,
+  --        keymaps = {
+  --          init_selection = "gnn",
+  --          node_incremental = "grn",
+  --          scope_incremental = "grc",
+  --          node_decremental = "grm",
+  --        },
+  --      },
+  --      indent = {
+  --        enable = true
+  --      }
+  --    }
+  --    end
+  -- }
   use {
     'ellisonleao/gruvbox.nvim',
     requires= {'ryanoasis/vim-devicons'},
@@ -213,6 +235,7 @@ end
           require("null-ls").builtins.diagnostics.shellcheck,
           require("null-ls").builtins.diagnostics.hadolint,
           require("null-ls").builtins.diagnostics.zsh,
+          require("null-ls").builtins.diagnostics.gitlint,
           require("null-ls").builtins.formatting.markdownlint,
           require("null-ls").builtins.formatting.terraform_fmt,
           require("null-ls").builtins.formatting.trim_newlines,
