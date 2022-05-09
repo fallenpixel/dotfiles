@@ -45,8 +45,8 @@ if [[ -e /usr/bin/lsd ]]; then
 else
   alias ls='ls --color=auto'
 fi
-if [[ -f ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
+if [[ -f "$HOME/.zshrc.local" ]]; then
+  source "${HOME}/.zshrc.local"
 fi
 # }}}
 # Personal Configuration {{{
@@ -57,6 +57,7 @@ export EDITOR="nvim"
 export PAGER="less"
 export LESS="-iFXR"
 export DIFFPROG="nvim -d"
+export GOPATH="${HOME}/.go"
 alias vi="nvim"
 alias vim="nvim"
 alias top="htop"

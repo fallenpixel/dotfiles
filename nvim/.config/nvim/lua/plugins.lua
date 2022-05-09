@@ -244,6 +244,7 @@ end
       })
     end
   }
+  use 'kosayoda/nvim-lightbulb'
   use {"ellisonleao/glow.nvim"}
   if Packer_Bootstrap then
     require('packer').sync()
