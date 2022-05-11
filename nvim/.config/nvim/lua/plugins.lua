@@ -33,7 +33,6 @@ return require('packer').startup({function(use)
     config = function()
       vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>')
       require('neogit').setup {
-      kind = "floating"
       }
     end
   }
