@@ -227,10 +227,15 @@ end
   --   end
   -- }
   use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
+  use {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
       require("null-ls").setup({
         sources = {
+          require("null-ls").builtins.diagnostics.vale,
           require("null-ls").builtins.diagnostics.ansiblelint,
           require("null-ls").builtins.diagnostics.luacheck,
           require("null-ls").builtins.diagnostics.markdownlint,

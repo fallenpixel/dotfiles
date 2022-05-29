@@ -54,7 +54,7 @@ map("n", "<leader>z",         "<cmd>Telescope spell_suggest theme=cursor<cr>")
 map("n", "<leader>r",          "<cmd>set number! relativenumber!<cr>")
 map("n", "<leader>sw",         "<cmd>StripWhitespace<cr>")
 map("n", "<leader>ml",
-  "<cmd>set ft=yaml.ansible ts=2 et<cr>ggO# vim:ft=yaml.ansible ts=2 et<esc><C-o>")
+  "<cmd>set ft=ansible.yaml ts=2 et<cr>ggO# vim:ft=yaml.ansible ts=2 et<esc><C-o>")
 map("n", "<leader>d",          "<cmd>lua vim.diagnostic.open_float()<cr>")
 map("n", "<leader>h",          "<cmd>vertical resize -10<cr>")
 map("n", "<leader>l",          "<cmd>vertical resize +10<cr>")

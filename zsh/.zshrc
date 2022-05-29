@@ -7,11 +7,12 @@
 # Use Antigen {{{
 
 source "$HOME/.dotfiles/antigen/antigen.zsh"
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle docker
+# antigen use oh-my-zsh
+# antigen bundle git
+# antigen bundle docker
 antigen bundle colored-man-pages
 antigen bundle zpm-zsh/colorize
+antigen bundle vagrant-prompt
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle greymd/docker-zsh-completion
 antigen bundle chrissicool/zsh-256color
@@ -40,11 +41,7 @@ fi
 if [[ -e /usr/bin/bat ]]; then
   alias cat='bat'
 fi
-if [[ -e /usr/bin/lsd ]]; then
-  alias ls='lsd'
-else
-  alias ls='ls --color=auto'
-fi
+alias ls='ls --color=auto --hyperlink=auto'
 if [[ -f "$HOME/.zshrc.local" ]]; then
   source "${HOME}/.zshrc.local"
 fi
@@ -53,7 +50,7 @@ fi
 export SUDO_PROMPT="Enter password:  "
 export ANSIBLE_NOCOWS=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
-export EDITOR="nvim"
+export EDITOR="/usr/local/bin/nvim"
 export PAGER="less"
 export LESS="-iFXR"
 export DIFFPROG="nvim -d"
