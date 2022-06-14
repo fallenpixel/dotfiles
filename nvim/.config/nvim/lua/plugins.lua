@@ -21,13 +21,6 @@ return require('packer').startup({function(use)
     end
   }
   use {
-    'f-person/git-blame.nvim',
-    config = function()
-      vim.g.gitblame_enabled = 0
-      vim.keymap.set('n', '<leader>gb', '<cmd>GitBlameToggle<CR>')
-    end
-  }
-  use {
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
     config = function()

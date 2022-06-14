@@ -81,7 +81,6 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-local capabilities = vim.lsp.protocol.make_client_capabilities()
 local lspconfig_status, lspconfig  = pcall(require, 'lspconfig')
 if not lspconfig_status then
   vim.notify("lspconfig failed to load", "error")

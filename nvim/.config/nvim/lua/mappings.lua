@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local luasnip = require('luasnip')
 
 map("n", "<leader>vr",         ":source ~/.config/nvim/init.lua<cr>")
 map("n", "<leader>ve",         ":edit ~/.config/nvim/init.lua<cr>")
@@ -74,5 +75,30 @@ map('v', "<leader>hn",         "<cmd>Gitsigns next_hunk<cr>")
 map('v', "<leader>hp",         "<cmd>Gitsigns prev_hunk<cr>")
 map("n", "<leader>md",         "<cmd>Glow<cr>")
 map("n", "<leader>he",         "gg<cmd>:r! date +%D<cr><ESC>I# <ESC>ddP")
+map({ "i", "s"}, "<a-p>", function()
+  if luasnip.expand_or_jumpable() then
+    luasnip.expand()
+  end
+end)
+map({ "i", "s"}, "<a-j>", function()
+  if luasnip.jumpable(1) then
+    luasnip.jump(1)
+  end
+end)
+map({ "i", "s"}, "<a-k>", function()
+  if luasnip.jumpable(-1) then
+    luasnip.jump(-1)
+  end
+end)
+map({ "i", "s"}, "<a-h>", function()
+  if luasnip.choice_active() then
+    luasnip.change_choice(-1)
+  end
+end)
+map({ "i", "s"}, "<a-l>", function()
+  if luasnip.choice_active() then
+    luasnip.change_choice(1)
+  end
+end)
 map("i", "<C-E>",              "<Plug>luasnip-next-choice")
 map("s", "<C-E>",              "<Plug>luasnip-next-choice")
