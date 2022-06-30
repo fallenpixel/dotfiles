@@ -68,7 +68,7 @@ export TMPDIR='/tmp/'
 export HISTFILE=~/.histfile
 export HISTSIZE=10000
 export SAVEHIST=10000
-setopt appendhistory
+setopt SHARE_HISTORY
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
