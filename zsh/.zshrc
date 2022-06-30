@@ -65,6 +65,10 @@ alias grep='grep --color=auto'
 alias codemusic="mpv --no-video --shuffle 'https://www.youtube.com/playlist?list=PLUja9J5M1XReqoBal5IKog_PWz2Q_hZ7Y'"
 alias shantytime="mpv --no-video -shuffle 'https://www.youtube.com/playlist?list=PLfxnB1YXnxp7ADOru6TZAv1sfQhE-7ht7'"
 export TMPDIR='/tmp/'
+export HISTFILE=~/.histfile
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt appendhistory
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
