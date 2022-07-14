@@ -228,6 +228,7 @@ end
     config = function()
       require("null-ls").setup({
         sources = {
+          require("null-ls").builtins.diagnostics.flake8,
           require("null-ls").builtins.diagnostics.vale,
           require("null-ls").builtins.diagnostics.ansiblelint,
           require("null-ls").builtins.diagnostics.luacheck,
