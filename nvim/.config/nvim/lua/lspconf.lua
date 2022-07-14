@@ -120,7 +120,8 @@ for _, lsp in ipairs(servers) do
       yaml = {
         schemas = {
           ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "/.gitlab-ci.yml",
-          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+          ["https://raw.githubusercontent.com/garethr/openshift-json-schema/master/v4.1.0/buildconfig.json"] = "buildconfig.yml"
         },
       }
     }
