@@ -86,7 +86,8 @@ if not lspconfig_status then
   vim.notify("lspconfig failed to load", "error")
   return
 end
-local servers = { 'texlab', 'terraformls', 'bashls', 'jedi_language_server', 'pyright', 'ansiblels', 'yamlls', 'dockerls', 'sumneko_lua'}
+local servers = { 'texlab', 'terraformls', 'bashls', 'jedi_language_server', 'pyright',
+                  'ansiblels', 'yamlls', 'dockerls', 'sumneko_lua'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
