@@ -101,25 +101,12 @@ return require('packer').startup({function(use)
     vim.g.vimwiki_foldering = 'custom'
   end
   }
-  -- use {'blackCauldron7/surround.nvim', Repo disappeared
-  use {'ur4ltz/surround.nvim',
-  config = function()
-  require"surround".setup {
-    context_offset = 100,
-    load_autogroups = false,
-    mappings_style = "surround",
-    map_insert_mode = true,
-    quotes = {"'", '"'},
-    brackets = {"(", '{', '['},
-    space_on_closing_char = false,
-    pairs = {
-      nestable = { b = { "(", ")" }, s = { "[", "]" }, B = { "{", "}" }, a = { "<", ">" } },
-      linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' }, j = { '"{{ ', ' }}"' }, l = { '[', ']()'}, L = { '[](', ')' } }
-    },
-    prefix = "s"
+  use {'kylechui/nvim-surround',
+    config = function ()
+      require("nvim-surround").setup({})
+    end
   }
-end
-}
+
   -- use { 'nvim-treesitter/nvim-treesitter',
   --    run = ':TSUpdate',
   --    config = function()
