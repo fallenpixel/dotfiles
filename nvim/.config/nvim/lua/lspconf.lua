@@ -87,7 +87,7 @@ if not lspconfig_status then
   return
 end
 local servers = { 'texlab', 'terraformls', 'bashls', 'jedi_language_server', 'pyright',
-                  'ansiblels', 'yamlls', 'dockerls', 'sumneko_lua'}
+                  'ansiblels', 'yamlls', 'dockerls', 'sumneko_lua', 'eslint', 'tsserver'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
