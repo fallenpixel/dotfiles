@@ -48,6 +48,13 @@ return require('packer').startup({function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+    config = function()
+      require('nvim-lightbulb').setup({autocmd = {enabled = true}})
+    end
+  }
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
@@ -97,6 +104,7 @@ return require('packer').startup({function(use)
   use {'vimwiki/vimwiki',
   config = function ()
     vim.g.vimwiki_list = {{path='$HOME/.vimwiki', syntax='markdown', ext='.md'}}
+---@diagnostic disable-next-line: 112
     vim.g.vimwiki_global_ext = 0
     vim.g.vimwiki_foldering = 'custom'
   end
@@ -232,7 +240,6 @@ return require('packer').startup({function(use)
       })
     end
   }
-  use 'kosayoda/nvim-lightbulb'
   use {"ellisonleao/glow.nvim"}
   if Packer_Bootstrap then
     require('packer').sync()
