@@ -59,7 +59,13 @@ return require('packer').startup({function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'norcalli/nvim-colorizer.lua'
-  use 'junegunn/vim-peekaboo'
+  use 'andrewferrier/debugprint.nvim'
+  use {
+    'junegunn/vim-peekaboo',
+    config = function()
+      require("debugprint").setup()
+    end
+    }
   use 'wellle/targets.vim'
   use 'voldikss/vim-floaterm'
   use 'ntpeters/vim-better-whitespace'
