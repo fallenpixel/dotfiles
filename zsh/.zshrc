@@ -22,7 +22,6 @@ antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle laurenkt/zsh-vimto
 antigen bundle olets/zsh-abbr
-antigen bundle nnao45/zsh-kubectl-completion
 antigen bundle reegnz/jq-zsh-plugin
 antigen theme romkatv/powerlevel10k
 
@@ -44,6 +43,9 @@ fi
 alias ls='ls --color=auto --hyperlink=auto'
 if [[ -f "$HOME/.zshrc.local" ]]; then
   source "${HOME}/.zshrc.local"
+fi
+if which kubectl >/dev/null; then
+  source <(kubectl completion zsh)
 fi
 # }}}
 # Personal Configuration {{{
