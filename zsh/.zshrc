@@ -5,6 +5,8 @@
 # /___|___/_| |_|
 
 # Use Antigen {{{
+autoload -Uz compinit
+compinit
 
 source "$HOME/.dotfiles/antigen/antigen.zsh"
 # antigen use oh-my-zsh
