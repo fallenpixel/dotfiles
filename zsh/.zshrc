@@ -49,6 +49,9 @@ fi
 if which kubectl >/dev/null; then
   source <(kubectl completion zsh)
 fi
+if which podman >/dev/null; then
+  source <(podman completion zsh)
+fi
 # }}}
 # Personal Configuration {{{
 export SUDO_PROMPT="Enter password:  "
