@@ -122,6 +122,8 @@ return require('packer').startup({function(use)
   }
 
   use { 'nvim-treesitter/nvim-treesitter-refactor' }
+  use { 'p00f/nvim-ts-rainbow' }
+  use { 'nvim-treesitter/nvim-treesitter-textobjects' }
   use { 'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
@@ -129,6 +131,14 @@ return require('packer').startup({function(use)
     'ellisonleao/gruvbox.nvim',
     requires= {'ryanoasis/vim-devicons'},
     config = function ()
+      require("gruvbox").setup({
+        undercurl = true,
+        underline = true,
+        bold = true,
+        italic = true,
+        strikethrough = true,
+        contrast = "soft",
+      })
       vim.o.background = "dark"
       vim.cmd("colorscheme gruvbox")
     end

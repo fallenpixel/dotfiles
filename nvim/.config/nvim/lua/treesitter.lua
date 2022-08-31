@@ -1,5 +1,20 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
+  ensure_installed = {
+    "bash",
+    "c",
+    "cpp",
+    "dockerfile",
+    "gitignore",
+    "javascript",
+    "json",
+    "lua",
+    "markdown",
+    "python",
+    "toml",
+    "typescript",
+    "yaml",
+  },
+
   sync_install = true,
   highlight = {
     enable = true,
@@ -39,5 +54,36 @@ require'nvim-treesitter.configs'.setup {
         goto_previous_usage = "<A-3>",
       },
     },
-  }
+  },
+  textobjects = {
+    select = {
+      enable = true,
+
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+      -- You can choose the select mode (default is charwise 'v')
+      selection_modes = {
+        ['@parameter.outer'] = 'v', -- charwise
+        ['@function.outer'] = 'V', -- linewise
+        ['@class.outer'] = '<c-v>', -- blockwise
+      },
+      -- If you set this to `true` (default is `false`) then any textobject is
+      -- extended to include preceding xor succeeding whitespace. Succeeding
+      -- whitespace has priority in order to act similarly to eg the built-in
+      -- `ap`.
+      include_surrounding_whitespace = true,
+    },
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true
+  },
 }
