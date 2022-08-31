@@ -4,6 +4,7 @@
 -- | | | |  __/ (_) \ V /| | | | | | |
 -- |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 require('plugins')
+require('treesitter')
 require('options')
 require('mappings')
 require('lspconf')

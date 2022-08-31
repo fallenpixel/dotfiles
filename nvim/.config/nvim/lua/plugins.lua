@@ -121,31 +121,10 @@ return require('packer').startup({function(use)
     end
   }
 
-  -- use { 'nvim-treesitter/nvim-treesitter',
-  --    run = ':TSUpdate',
-  --    config = function()
-  --    require'nvim-treesitter.configs'.setup {
-  --      ensure_installed = "all",
-  --      sync_install = true,
-  --      highlight = {
-  --        enable = true,
-  --        additional_vim_regex_highlighting = true,
-  --      },
-  --      incremental_selection = {
-  --        enable = true,
-  --        keymaps = {
-  --          init_selection = "gnn",
-  --          node_incremental = "grn",
-  --          scope_incremental = "grc",
-  --          node_decremental = "grm",
-  --        },
-  --      },
-  --      indent = {
-  --        enable = true
-  --      }
-  --    }
-  --    end
-  -- }
+  use { 'nvim-treesitter/nvim-treesitter-refactor' }
+  use { 'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  }
   use {
     'ellisonleao/gruvbox.nvim',
     requires= {'ryanoasis/vim-devicons'},
@@ -184,42 +163,6 @@ return require('packer').startup({function(use)
       require("bufferline").setup()
     end
   }
-  -- use {
-  --   "windwp/nvim-autopairs",
-  --   requires = {
-  --     'hrsh7th/nvim-cmp',
-  --     'nvim-treesitter/nvim-treesitter'
-  --   },
-  --   config = function()
-  --     require("nvim-autopairs").setup{
-  --       check_ts = true,
-  --       ts_config = {
-  --         lua = { "string", "source" },
-  --         javascript = { "string", "template_string" },
-  --         java = false,
-  --       },
-  --       disable = true,
-  --       disable_filetype = { "TelescopePrompt", "spectre_panel" },
-  --       fast_wrap = {
-  --         map = "<M-e>",
-  --         chars = { "{", "[", "(", '"', "'" },
-  --         pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-  --         offset = 0, -- Offset from pattern match
-  --         end_key = "$",
-  --         keys = "qwertyuiopzxcvbnmasdfghjkl",
-  --         check_comma = true,
-  --         highlight = "PmenuSel",
-  --         highlight_grey = "LineNr",
-  --       },
-  --   }
-  --     local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-  --     local cmp_status_ok, cmp = pcall(require, "cmp")
-  --       if not cmp_status_ok then
-  --     return
-  --     end
-  --     cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
-  --   end
-  -- }
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
