@@ -39,6 +39,9 @@ fi
 if [[ -d ~/.local/bin ]]; then
   export PATH=$PATH:~/.local/bin
 fi
+if [[ -d ~/.go/bin ]]; then
+  export PATH=$PATH:~/.go/bin
+fi
 if [[ -e /usr/bin/bat ]]; then
   alias cat='bat'
 fi

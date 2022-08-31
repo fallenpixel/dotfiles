@@ -182,19 +182,27 @@ return require('packer').startup({function(use)
     config = function()
       require("null-ls").setup({
         sources = {
+          require("null-ls").builtins.code_actions.eslint,
+          require("null-ls").builtins.code_actions.shellcheck,
           require("null-ls").builtins.diagnostics.flake8,
           require("null-ls").builtins.diagnostics.vale,
           require("null-ls").builtins.diagnostics.ansiblelint,
+          require("null-ls").builtins.diagnostics.chktex,
+          require("null-ls").builtins.diagnostics.eslint,
+          require("null-ls").builtins.diagnostics.hadolint,
           require("null-ls").builtins.diagnostics.luacheck,
           require("null-ls").builtins.diagnostics.markdownlint,
           require("null-ls").builtins.diagnostics.shellcheck,
-          require("null-ls").builtins.diagnostics.hadolint,
           require("null-ls").builtins.diagnostics.zsh,
           require("null-ls").builtins.diagnostics.gitlint,
+          require("null-ls").builtins.formatting.black,
+          require("null-ls").builtins.formatting.eslint,
           require("null-ls").builtins.formatting.markdownlint,
+          require("null-ls").builtins.formatting.prettier,
           require("null-ls").builtins.formatting.terraform_fmt,
           require("null-ls").builtins.formatting.trim_newlines,
-          require("null-ls").builtins.formatting.trim_whitespace
+          require("null-ls").builtins.formatting.trim_whitespace,
+          require("null-ls").builtins.formatting.yamlfmt
         },
       })
     end
