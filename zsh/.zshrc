@@ -55,6 +55,9 @@ fi
 if which podman >/dev/null; then
   source <(podman completion zsh)
 fi
+if [[ -f "$HOME/.ripgreprc" ]]; then
+  export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+fi
 # }}}
 # Personal Configuration {{{
 export SUDO_PROMPT="Enter password:  "
@@ -84,6 +87,7 @@ zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+
 # }}}
 # Bookmarks {{{
 hash -d -- dotfiles=$HOME/.dotfiles/
