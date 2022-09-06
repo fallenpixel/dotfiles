@@ -18,7 +18,7 @@ if not lspkind_status then
   return
 end
 local cmp_status, cmp = pcall(require, 'cmp')
-if cmp_status then
+if not cmp_status then
   vim.notify("cmp failed to load", error)
   return
 end
