@@ -190,7 +190,6 @@ return require('packer').startup({function(use)
           require("null-ls").builtins.diagnostics.chktex,
           require("null-ls").builtins.diagnostics.eslint,
           require("null-ls").builtins.diagnostics.hadolint,
-          require("null-ls").builtins.diagnostics.luacheck,
           require("null-ls").builtins.diagnostics.markdownlint,
           require("null-ls").builtins.diagnostics.shellcheck,
           require("null-ls").builtins.diagnostics.zsh,

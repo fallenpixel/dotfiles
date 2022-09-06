@@ -18,7 +18,7 @@ if not lspkind_status then
   return
 end
 local cmp_status, cmp = pcall(require, 'cmp')
-if not cmp_status then
+if cmp_status then
   vim.notify("cmp failed to load", error)
   return
 end
@@ -81,6 +81,8 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig_status, lspconfig  = pcall(require, 'lspconfig')
 if not lspconfig_status then
   vim.notify("lspconfig failed to load", "error")
@@ -107,7 +109,7 @@ for _, lsp in ipairs(servers) do
         },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
-          globals = {'vim'},
+          globals = { "vim" },
         },
         workspace = {
           -- Make the server aware of Neovim runtime files
@@ -126,8 +128,8 @@ for _, lsp in ipairs(servers) do
         },
       }
     }
-
   }
+
 local groovy_paths = {'/usr/share/java/groovy-language-server/groovy-language-server.jar',
   '/usr/local/share/java/groovy-language-server/groovy-language-server.jar'}
 for _, groovy_ls in ipairs(groovy_paths) do
