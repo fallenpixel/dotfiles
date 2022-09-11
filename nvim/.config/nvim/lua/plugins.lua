@@ -112,13 +112,14 @@ return require('packer').startup({function(use)
       require("nvim-surround").setup({})
     end
   }
-
-  use { 'nvim-treesitter/nvim-treesitter-refactor' }
-  use { 'p00f/nvim-ts-rainbow' }
-  use { 'nvim-treesitter/nvim-treesitter-textobjects' }
-  use { 'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-  }
+  if getHostname() ~= 'winterfell' then
+    use { 'nvim-treesitter/nvim-treesitter-refactor' }
+    use { 'p00f/nvim-ts-rainbow' }
+    use { 'nvim-treesitter/nvim-treesitter-textobjects' }
+    use { 'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+    }
+  end
   use {
     'ellisonleao/gruvbox.nvim',
     requires= {'ryanoasis/vim-devicons'},
