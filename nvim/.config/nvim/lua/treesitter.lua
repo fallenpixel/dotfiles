@@ -30,7 +30,12 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   indent = {
-    enable = true
+    enable = true,
+    -- disable = { "yaml"},
+  },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
   },
   refactor = {
     highlight_definitions = {
