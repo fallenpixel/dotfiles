@@ -5,7 +5,7 @@
 -- |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
 function getHostname()
-  local f = io.popen("/bin/hostname")
+  local f = io.popen("/bin/hostnamectl --static")
   local hostname = f:read("*a") or ""
   f:close()
   hostname =string.gsub(hostname, "\n$", "")
@@ -18,6 +18,7 @@ require('lspconf')
 require('snippets')
 require('aucmd')
 require('terminal')
+print(getHostname())
 if getHostname() ~= 'winterfell' then
   require('treesitter')
 end
