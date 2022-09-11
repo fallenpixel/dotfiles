@@ -10,6 +10,7 @@ require('mappings')
 require('lspconf')
 require('snippets')
 require('aucmd')
+require('terminal')
 local module_status_ok, local_config = pcall(require, "local_config")
 if not module_status_ok then
   return

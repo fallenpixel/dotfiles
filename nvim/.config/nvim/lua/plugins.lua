@@ -67,8 +67,8 @@ return require('packer').startup({function(use)
     end
     }
   use 'wellle/targets.vim'
-  use 'voldikss/vim-floaterm'
   use 'ntpeters/vim-better-whitespace'
+  use 'akinsho/toggleterm.nvim'
   use {
     'numToStr/Comment.nvim',
     config = function()
@@ -107,14 +107,6 @@ return require('packer').startup({function(use)
     }
   }
   -- use 'christoomey/vim-tmux-navigator'
-  use {'vimwiki/vimwiki',
-  config = function ()
-    vim.g.vimwiki_list = {{path='$HOME/.vimwiki', syntax='markdown', ext='.md'}}
----@diagnostic disable-next-line: 112
-    vim.g.vimwiki_global_ext = 0
-    vim.g.vimwiki_foldering = 'custom'
-  end
-  }
   use {'kylechui/nvim-surround',
     config = function ()
       require("nvim-surround").setup({})
@@ -210,6 +202,12 @@ return require('packer').startup({function(use)
   if Packer_Bootstrap then
     require('packer').sync()
   end
+  use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup()
+  end
+}
 end,
 config = { display = { open_fn = require('packer.util').float,}}
 })
