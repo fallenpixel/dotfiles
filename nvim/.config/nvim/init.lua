@@ -18,7 +18,6 @@ require('lspconf')
 require('snippets')
 require('aucmd')
 require('terminal')
-print(getHostname())
 if getHostname() ~= 'winterfell' then
   require('treesitter')
 end
