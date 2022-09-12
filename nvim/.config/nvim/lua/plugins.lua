@@ -1,12 +1,12 @@
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  Packer_Bootstrap = fn.system({'git', 'clone', '--depth', '1',
-    'https://github.com/wbthomason/packer.nvim', install_path})
+  Packer_Bootstrap = fn.system({ 'git', 'clone', '--depth', '1',
+    'https://github.com/wbthomason/packer.nvim', install_path })
 end
-return require('packer').startup({function(use)
+return require('packer').startup({ function(use)
   use 'wbthomason/packer.nvim'
-  use {'rcarriga/nvim-notify',
+  use { 'rcarriga/nvim-notify',
     config = function()
       vim.notify = require("notify")
     end
@@ -52,7 +52,7 @@ return require('packer').startup({function(use)
     'kosayoda/nvim-lightbulb',
     requires = 'antoinemadec/FixCursorHold.nvim',
     config = function()
-      require('nvim-lightbulb').setup({autocmd = {enabled = true}})
+      require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
     end
   }
   use 'hrsh7th/nvim-cmp'
@@ -65,39 +65,39 @@ return require('packer').startup({function(use)
     config = function()
       require("debugprint").setup()
     end
-    }
+  }
   use 'wellle/targets.vim'
   use 'ntpeters/vim-better-whitespace'
   use 'akinsho/toggleterm.nvim'
   use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   }
-  use {'monaqa/dial.nvim',
+  use { 'monaqa/dial.nvim',
     config = {
       function()
         local dial = require('dial.config')
         local augend = require('dial.augend')
-        dial.augends:register_group{
+        dial.augends:register_group {
           default = {
             augend.integer.alias.decimal,
             augend.integer.alias.hex,
             augend.date.alias["%m/%d/%Y"],
             augend.constant.alias.bool,
-            augend.constant.new{
+            augend.constant.new {
               elements = { "yes", "no" },
               word = true,
               cyclic = true
             },
-            augend.constant.new{
+            augend.constant.new {
               elements = { "Yes", "No" },
               word = true,
               cyclic = true
             },
-            augend.constant.new{
-              elements = {"[ ]", "[x]"},
+            augend.constant.new {
+              elements = { "[ ]", "[x]" },
               word = false,
               cyclic = true
             }
@@ -107,8 +107,8 @@ return require('packer').startup({function(use)
     }
   }
   -- use 'christoomey/vim-tmux-navigator'
-  use {'kylechui/nvim-surround',
-    config = function ()
+  use { 'kylechui/nvim-surround',
+    config = function()
       require("nvim-surround").setup({})
     end
   }
@@ -122,8 +122,8 @@ return require('packer').startup({function(use)
   end
   use {
     'ellisonleao/gruvbox.nvim',
-    requires= {'ryanoasis/vim-devicons'},
-    config = function ()
+    requires = { 'ryanoasis/vim-devicons' },
+    config = function()
       require("gruvbox").setup({
         undercurl = true,
         underline = true,
@@ -137,27 +137,45 @@ return require('packer').startup({function(use)
     end
   }
   use {
+    'ahmedkhalf/project.nvim',
+    require = 'nvim-telescope/telescope',
+    config = function()
+      require("project_nvim").setup {
+        active = true,
+        detection_methods = { "pattern" },
+        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+        show_hidden = true,
+        datapath = vim.fn.stdpath("data"),
+      }
+    end
+  }
+  use {
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
       'nvim-lua/popup.nvim',
       'ElPiloto/telescope-vimwiki.nvim',
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
-    config = function()
-      require('telescope').setup()
-      require('telescope').load_extension('fzf')
-      require('telescope').load_extension('vimwiki')
-    end
+      'ahmedkhalf/project.nvim',
+      config = function()
+        require('telescope').setup()
+      end
     }
   }
-  use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons' },
-  config = function()
-    require('lualine').setup{
-      options = { theme = "auto" }
-    }
+  local tele_status_ok, telescope = pcall(require, "telescope")
+  if tele_status_ok then
+    local project_status_ok, project = pcall(require, "project_nvim")
+    if project_status_ok then
+      telescope.load_extension("projects")
+    end
   end
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        options = { theme = "auto" }
+      }
+    end
   }
   use {
     'akinsho/bufferline.nvim', branch = 'main',
@@ -199,16 +217,16 @@ return require('packer').startup({function(use)
       })
     end
   }
-  use {"ellisonleao/glow.nvim"}
+  use { "ellisonleao/glow.nvim" }
   if Packer_Bootstrap then
     require('packer').sync()
   end
   use {
-  "folke/which-key.nvim",
-  config = function()
-    require("which-key").setup()
-  end
-}
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup()
+    end
+  }
 end,
-config = { display = { open_fn = require('packer.util').float,}}
+  config = { display = { open_fn = require('packer.util').float, } }
 })

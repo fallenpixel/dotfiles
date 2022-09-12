@@ -3,7 +3,7 @@ local luasnip = require('luasnip')
 local wk = require('which-key')
 local mappings = {
   ["b"] = { "<cmd>Telescope buffers theme=cursor<cr>", "Buffers" },
-  ["c"] = { "<cmd>Bdelete!<cr>", "Close Buffer"},
+  ["c"] = { "<cmd>bd<cr>", "Close Buffer"},
   ["d"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Diagnostics" },
 
   ["H"] = { "<cmd>vertical resize -10<cr>", "Vert Smaller" },
