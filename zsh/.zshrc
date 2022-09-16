@@ -55,6 +55,9 @@ fi
 if which kubectl >/dev/null; then
   source <(kubectl completion zsh)
 fi
+if which glab > /dev/null; then
+  source <(glab completion -s zsh)
+fi
 if which podman >/dev/null; then
   source <(podman completion zsh)
 fi
