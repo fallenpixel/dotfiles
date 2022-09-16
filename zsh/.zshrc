@@ -17,7 +17,7 @@ antigen bundle zpm-zsh/colorize
 antigen bundle vagrant-prompt
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle greymd/docker-zsh-completion
-antigen bundle chrissicool/zsh-256color
+#antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MichaelAquilina/zsh-autoswitch-virtualenv
 antigen bundle zdharma-continuum/fast-syntax-highlighting
@@ -26,6 +26,9 @@ antigen bundle laurenkt/zsh-vimto
 antigen bundle olets/zsh-abbr
 antigen bundle reegnz/jq-zsh-plugin
 antigen theme romkatv/powerlevel10k
+if [[ "$TERM" = "xterm-kitty" ]]; then
+  antigen bundle redxtech/zsh-kitty
+fi
 
 # }}}
 # Conditional Configuration {{{
@@ -58,6 +61,12 @@ fi
 if [[ -f "$HOME/.ripgreprc" ]]; then
   export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 fi
+if which tmuxinator > /dev/null; then
+  alias "tm=tmuxinator"
+fi
+if [[ -d "$HOME/.completions" ]]; then
+  export FPATH=$FPATH:$HOME/.completions
+fi
 # }}}
 # Personal Configuration {{{
 export SUDO_PROMPT="Enter password:  "
@@ -81,6 +90,7 @@ export TMPDIR='/tmp/'
 export HISTFILE=~/.histfile
 export HISTSIZE=10000
 export SAVEHIST=10000
+export DIRCOLORS=truecolor
 setopt SHARE_HISTORY
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
@@ -99,6 +109,9 @@ source "$HOME/.p10k.zsh"
 autoload -Uz compinit
 compinit
 antigen apply
+if [[ "$TERM" = "xterm-kitty" ]]; then
+  __kitty_complete
+fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
