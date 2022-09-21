@@ -52,15 +52,6 @@ alias ls='ls --color=auto --hyperlink=auto'
 if [[ -f "$HOME/.zshrc.local" ]]; then
   source "${HOME}/.zshrc.local"
 fi
-if which kubectl >/dev/null; then
-  source <(kubectl completion zsh)
-fi
-if which glab > /dev/null; then
-  source <(glab completion -s zsh)
-fi
-if which podman >/dev/null; then
-  source <(podman completion zsh)
-fi
 if [[ -f "$HOME/.ripgreprc" ]]; then
   export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 fi
