@@ -39,6 +39,7 @@ return require('packer').startup({ function(use)
 
   use 'junegunn/vim-easy-align'
   use 'sheerun/vim-polyglot'
+  use 'phelipetls/jsonpath.nvim'
   use 'preservim/tagbar'
   use 'nathanaelkane/vim-indent-guides'
   use 'scrooloose/nerdtree'
@@ -113,9 +114,10 @@ return require('packer').startup({ function(use)
     end
   }
   if getHostname() ~= 'winterfell' then
-    use { 'nvim-treesitter/nvim-treesitter-refactor' }
     use { 'p00f/nvim-ts-rainbow' }
     use { 'nvim-treesitter/nvim-treesitter-textobjects' }
+    use {'nvim-treesitter/nvim-treesitter'}
+    use {'nvim-treesitter/playground'}
     use { 'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
     }

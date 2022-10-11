@@ -18,6 +18,7 @@ local mappings = {
   ["k"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
   ["M"] = { "<cmd>Glow<cr>", "Preview Markdown" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+  ["j"] = { "<cmd>lua print(require('jsonpath').get())<cr>", "Get jsonpath" },
   ["q"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["w"] = { "<cmd>StripWhitespace<cr>", "Strip Whitespace" },
   g = {
