@@ -124,6 +124,7 @@ return require('packer').startup({ function(use)
   end
   use {
     'ellisonleao/gruvbox.nvim',
+    tag='1.0.0',
     requires = { 'ryanoasis/vim-devicons' },
     config = function()
       require("gruvbox").setup({
