@@ -198,7 +198,7 @@ return require('packer').startup({ function(use)
           require("null-ls").builtins.code_actions.eslint,
           require("null-ls").builtins.code_actions.shellcheck,
           require("null-ls").builtins.diagnostics.flake8,
-          require("null-ls").builtins.diagnostics.vale,
+          -- require("null-ls").builtins.diagnostics.vale,
           require("null-ls").builtins.diagnostics.ansiblelint,
           require("null-ls").builtins.diagnostics.chktex,
           require("null-ls").builtins.diagnostics.eslint,
