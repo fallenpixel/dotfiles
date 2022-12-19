@@ -23,6 +23,7 @@ local mappings = {
   ["w"] = { "<cmd>StripWhitespace<cr>", "Strip Whitespace" },
   g = {
     name = "Git",
+    d = { "<cmd>DiffViewOpen<cr>", "DiffView" },
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
