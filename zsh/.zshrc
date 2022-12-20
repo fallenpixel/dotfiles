@@ -79,7 +79,7 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 if which kubectl > /dev/null 2>&1; then
-  compdef kubecolor=kubectl
+  compdef kubecolor=_kubectl
 fi
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
