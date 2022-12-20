@@ -78,7 +78,7 @@ zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-if compdef kubectl > /dev/null; then
+if compdef kubectl > /dev/null 2>&1; then
   compdef kubecolor=kubectl
 fi
 if [[ -f ~/.zshrc.local ]]; then
