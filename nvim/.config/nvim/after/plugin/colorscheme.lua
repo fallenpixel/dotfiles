@@ -1,4 +1,6 @@
-vim.cmd("colorscheme gruvbox-material")
+
 require('lualine').setup{
   options = {theme = "auto"}
 }
+vim.o.background = "dark"
+vim.cmd([[colorscheme codedark]])

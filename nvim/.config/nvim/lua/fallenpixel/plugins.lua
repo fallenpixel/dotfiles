@@ -45,11 +45,12 @@ return require('packer').startup(function(use)
   use 'akinsho/toggleterm.nvim'
   use 'folke/which-key.nvim'
   use 'junegunn/vim-peekaboo'
+  use 'tomasiser/vim-code-dark'
   use {
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
   }
-  use 'sainnhe/gruvbox-material'
+  use ''
   use {
   'someone-stole-my-name/yaml-companion.nvim',
   requires = {
