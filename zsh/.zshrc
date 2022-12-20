@@ -7,10 +7,10 @@ source ${ZDOTDIR:-~}/antidote/antidote.zsh
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+if [[ -d "$HOME/.completions" ]]; then
+  export FPATH=$HOME/.completions:$FPATH
+fi
 [[ ! -f ${ZDOTDIR:-~}/p10k.zsh ]] || source ${ZDOTDIR:-~}/p10k.zsh
-antidote load
-autoload -U compinit && compinit
-autoload -Uz promptinit && promptinit && prompt powerlevel10k
 # Conditional Configurations {{{
 if [[ "$HOST" = shadow ]]; then
   export LIBVIRT_DEFAULT_URI="qemu+ssh://katyl@casterlyrock/system"
@@ -36,9 +36,6 @@ if [[ -f "$HOME/.ripgreprc" ]]; then
 fi
 if which tmuxinator > /dev/null; then
   alias "tm=tmuxinator"
-fi
-if [[ -d "$HOME/.completions" ]]; then
-  export FPATH=$HOME/.completions:$FPATH
 fi
 if which kubecolor > /dev/null; then
   alias k="kubecolor"
@@ -78,11 +75,14 @@ zstyle ':completion:*' completer _complete _ignored _correct _approximate
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-if which kubectl > /dev/null 2>&1; then
-  compdef kubecolor=_kubectl
-fi
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
+antidote load
+autoload -U compinit && compinit
+if which kubectl > /dev/null 2>&1; then
+  compdef kubecolor=_kubectl
+fi
+autoload -Uz promptinit && promptinit && prompt powerlevel10k
 # vim: ft=sh
 
