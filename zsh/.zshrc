@@ -41,10 +41,9 @@ if [[ -d "$HOME/.completions" ]]; then
   export FPATH=$HOME/.completions:$FPATH
 fi
 if which kubecolor > /dev/null; then
-  alias k="kubecolor"
-else
-  alias k="kubectl"
+  alias kubectl="kubecolor"
 fi
+alias k="kubectl"
 # }}}
 # Aliases {{{
 export SUDO_PROMPT="Enter password:  "

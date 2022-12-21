@@ -6,3 +6,4 @@ greymd/docker-zsh-completion
 reegnz/jq-zsh-plugin
 marlonrichert/zcolors
 zpm-zsh/colorize
+agkozak/zsh-z
