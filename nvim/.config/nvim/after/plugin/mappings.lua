@@ -76,7 +76,7 @@ local mappings = {
   },
   m = {
     name = "Modelines",
-    a = { "<cmd>set ft=ansible.yaml ts=2 et<cr>ggO# vim:ft=yaml.ansible ts=2 et<esc><C-o>", "Ansible" },
+    a = { "<cmd>set ft=yaml.ansible ts=2 et<cr>ggO# vim:ft=yaml.ansible ts=2 et<esc><C-o>", "Ansible" },
   },
   p = {
     name = "Packer",

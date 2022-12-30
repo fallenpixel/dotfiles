@@ -2,8 +2,8 @@ vim.cmd('filetype plugin indent on')
 vim.g.clipboard                           = "namedplus"
 vim.o.background                          = "dark"
 vim.opt.termguicolors                     = true
-vim.g.mapleader                           = ","
-vim.g.localleader                         = ","
+vim.g.mapleader                           = " "
+vim.g.localleader                         = " "
 vim.opt.showbreak                         = "↪"
 vim.opt.listchars:append({ tab            = "<->" })
 vim.opt.listchars:append({ eol            = "↲" })
