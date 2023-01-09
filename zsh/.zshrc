@@ -70,7 +70,8 @@ export DIRCOLORS=truecolor
 setopt SHARE_HISTORY
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion) 
 # }}}
-zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle ':completion:*' completer _complete _ignored _correct #_approximate
+zstyle ':autocomplete:*' insert-unambiguous yes
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
