@@ -9,10 +9,13 @@ require'nvim-treesitter.configs'.setup {
     "json",
     "lua",
     "markdown",
+    "markdown_inline",
     "python",
+    "regex",
     "toml",
     "typescript",
-    "yaml",
+    "vim",
+    "yaml"
   },
 
   sync_install = true,

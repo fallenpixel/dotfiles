@@ -50,7 +50,6 @@ return require('packer').startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
   }
-  use ''
   use {
   'someone-stole-my-name/yaml-companion.nvim',
   requires = {
@@ -75,6 +74,18 @@ return require('packer').startup(function(use)
       'ahmedkhalf/project.nvim'
     }
   }
+use({
+
+  "folke/noice.nvim",
+  config = function()
+    require("noice").setup({
+    })
+  end,
+  requires = {
+    "MunifTanjim/nui.nvim",
+    "rcarriga/nvim-notify",
+    }
+})
   use {'VonHeikemen/lsp-zero.nvim',
     requires = {
     -- LSP Support
