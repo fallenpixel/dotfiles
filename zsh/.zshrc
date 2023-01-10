@@ -78,8 +78,8 @@ bindkey -M vicmd v edit-command-line
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
-antidote load
 autoload -U compinit && compinit
+antidote load
 if which kubectl > /dev/null 2>&1; then
   compdef kubecolor=kubectl
 fi

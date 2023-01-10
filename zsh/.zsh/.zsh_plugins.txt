@@ -7,3 +7,4 @@ marlonrichert/zcolors
 zpm-zsh/colorize
 agkozak/zsh-z
 Aloxaf/fzf-tab
+joshskidmore/zsh-fzf-history-search
