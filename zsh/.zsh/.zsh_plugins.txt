@@ -1,11 +1,9 @@
 zdharma-continuum/fast-syntax-highlighting
 jeffreytse/zsh-vi-mode
 romkatv/powerlevel10k kind:fpath
-# marlonrichert/zsh-autocomplete
 greymd/docker-zsh-completion
 reegnz/jq-zsh-plugin
 marlonrichert/zcolors
 zpm-zsh/colorize
 agkozak/zsh-z
 Aloxaf/fzf-tab
-joshskidmore/zsh-fzf-history-search
