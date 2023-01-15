@@ -80,7 +80,14 @@ if [[ -f ~/.zshrc.local ]]; then
 fi
 autoload -U compinit && compinit
 antidote load
+bindkey '^q' jq-complete
 if which kubectl > /dev/null 2>&1; then
+  if [[ ! -d $HOME/.completions/ ]]; then
+    mkdir "$HOME/.completions/"
+  fi
+  if [[ ! -f $HOME/.completions/_kubectl ]]; then
+    kubectl completions zsh > "$HOME/.completions/_kubectl"
+  fi
   compdef kubecolor=kubectl
 fi
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
