@@ -86,7 +86,7 @@ if which kubectl > /dev/null 2>&1; then
     mkdir "$HOME/.completions/"
   fi
   if [[ ! -f $HOME/.completions/_kubectl ]]; then
-    kubectl completions zsh > "$HOME/.completions/_kubectl"
+    kubectl completion zsh > "$HOME/.completions/_kubectl"
   fi
   compdef kubecolor=kubectl
 fi
