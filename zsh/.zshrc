@@ -41,6 +41,7 @@ if which kubecolor > /dev/null; then
   alias kubectl="kubecolor"
 fi
 alias k="kubectl"
+alias template="kubectl create --dry-run=client -o yaml"
 # }}}
 # Aliases {{{
 export SUDO_PROMPT="Enter password:  "
