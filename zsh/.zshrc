@@ -2,6 +2,7 @@
 # shellcheck disable=SC2034
 ZDOTDIR=~/.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+export XDG_CONFIG_HOME=$HOME/.config
 alias vi="nvim"
 source ${ZDOTDIR:-~}/antidote/antidote.zsh
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
