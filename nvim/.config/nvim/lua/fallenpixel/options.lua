@@ -2,6 +2,7 @@ vim.cmd('filetype plugin indent on')
 vim.g.clipboard                           = "namedplus"
 vim.o.background                          = "dark"
 vim.opt.termguicolors                     = true
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader                           = " "
 vim.g.localleader                         = " "
 vim.opt.showbreak                         = "↪"

@@ -5,7 +5,6 @@ local mappings = {
   ["b"] = { "<cmd>Telescope buffers theme=cursor<cr>", "Buffers" },
   ["c"] = { "<cmd>bd<cr>", "Close Buffer"},
   ["d"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Diagnostics" },
-
   ["H"] = { "<cmd>vertical resize -10<cr>", "Vert Smaller" },
   ["L"] = { "<cmd>vertical resize +10<cr>", "Vert Bigger" },
   ["J"] = { "<cmd>vertical resize -10<cr>", "Horiz Smaller" },
@@ -110,6 +109,8 @@ local mappings = {
   },
 }
 local vmappings = {
+  ["e"] = { "c<c-r>=system('base64 ', @\")<cr><esc>", "Base64 encode" },
+  ["E"] = { "c<c-r>=system('base64 --decode', @\")<cr><esc>", "Base64 decode" },
 }
 local opts = {
   mode = "n", -- NORMAL mode
