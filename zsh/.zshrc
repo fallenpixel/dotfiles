@@ -61,7 +61,6 @@ alias ls=' ls --color=auto --hyperlink=auto'
 alias sudo="sudo "
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias kdebug='_kdebug() { kubectl run -i --rm --tty debug --image jonlabelle/network-tools --restart=Never -- sh; }; _kdebug'
 alias codemusic="mpv --no-video --shuffle 'https://www.youtube.com/playlist?list=PLUja9J5M1XReqoBal5IKog_PWz2Q_hZ7Y'"
 alias shantytime="mpv --no-video -shuffle 'https://www.youtube.com/playlist?list=PLfxnB1YXnxp7ADOru6TZAv1sfQhE-7ht7'"
 export TMPDIR='/tmp/'
