@@ -92,5 +92,5 @@ if which kubectl > /dev/null 2>&1; then
   compdef kubecolor=kubectl
 fi
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
+unsetopt BEEP
 # vim: ft=sh
-
