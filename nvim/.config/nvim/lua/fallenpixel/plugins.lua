@@ -33,11 +33,13 @@ require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
+  use 'gennaro-tedesco/nvim-jqx'
   use 'junegunn/vim-easy-align'
   use {
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
   }
+  use 'nathom/filetype.nvim'
   use 'nathanaelkane/vim-indent-guides'
   use 'scrooloose/nerdtree'
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
