@@ -11,7 +11,8 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-require('packer').startup(function(use)
+return require('packer').startup(function(use)
+  use "rebelot/kanagawa.nvim"
   use 'wbthomason/packer.nvim'
   use {
     'lewis6991/gitsigns.nvim',
