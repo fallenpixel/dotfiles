@@ -12,7 +12,6 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  use "rebelot/kanagawa.nvim"
   use 'wbthomason/packer.nvim'
   use {
     'lewis6991/gitsigns.nvim',
@@ -30,9 +29,11 @@ return require('packer').startup(function(use)
       require('nvim-surround').setup()
     end
   }
+  use 'tanvirtin/monokai.nvim'
+  vim.cmd([[colorscheme monokai]])
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    requires = 'kyazdani42/nvim-web-devicons',
   }
   use 'gennaro-tedesco/nvim-jqx'
   use 'junegunn/vim-easy-align'
