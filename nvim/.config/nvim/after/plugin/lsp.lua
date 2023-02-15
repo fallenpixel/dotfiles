@@ -10,7 +10,7 @@ lsp.ensure_installed({
   'jsonls',
   'prosemd_lsp',
   'marksman',
-  'lua-language-server',
+  'lua_ls',
   'terraformls',
   'yamlls'
 })
